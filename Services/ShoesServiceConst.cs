@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using webApiProject.Models;
+using webApiProject.Interfaces;
 namespace webApiProject.Services;
 
-public static class ShoesService
+public class ShoesServiceConst:IShoesService
 {
 
-    private static List<Shoes> shoesList;
+    private List<Shoes> shoesList;
 
-    static ShoesService()
+    public ShoesServiceConst()
     {
         shoesList = new List<Shoes>
         {
@@ -18,16 +19,16 @@ public static class ShoesService
         };
     }
 
-    public static List<Shoes> Get()
+    public List<Shoes> Get()
     {
         return shoesList;
     }
 
-    public static Shoes Get(int id)
+    public  Shoes Get(int id)
     {
         return shoesList.FirstOrDefault(s => s.Id == id);
     }
-    public static int Insert(Shoes newItem)
+    public  int Insert(Shoes newItem)
     {
         if (!CheckValueRequest(newItem))
             return -1;
@@ -38,7 +39,7 @@ public static class ShoesService
         return newItem.Id;
     }
 
-    public static bool Update(int id, Shoes newItem)
+    public  bool Update(int id, Shoes newItem)
     {
         if (!CheckValueRequest(newItem) || newItem.Id != id)
             return false;
@@ -51,7 +52,7 @@ public static class ShoesService
         return true;
     }
 
-    public static bool Delete(int id)
+    public  bool Delete(int id)
     {
         var shoe = shoesList.FirstOrDefault(s => s.Id == id);
         if (shoe == null)
@@ -61,7 +62,7 @@ public static class ShoesService
         return true;
     }
 
-    private static bool CheckValueRequest(Shoes newItem)
+    private  bool CheckValueRequest(Shoes newItem)
     {
         if (newItem == null || string.IsNullOrWhiteSpace(newItem.Name)
         || string.IsNullOrWhiteSpace(newItem.Color) || newItem.Size < 18)
@@ -69,4 +70,14 @@ public static class ShoesService
         return true;
     }
 
+}
+
+
+public static class ShoesUtilities
+{
+    public static void AddShoesConst(this IServiceCollection services)
+    {
+        services.AddSingleton<IShoesService, ShoesServiceConst>();
+
+    }
 }
