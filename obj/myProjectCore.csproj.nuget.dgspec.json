@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\myProjectCore.csproj": {}
+    "Z:\\B\\אינהורן ציבי\\.net core\\25-3-4\\.net-core-project\\myProjectCore.csproj": {}
   },
   "projects": {
-    "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\myProjectCore.csproj": {
+    "Z:\\B\\אינהורן ציבי\\.net core\\25-3-4\\.net-core-project\\myProjectCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\myProjectCore.csproj",
+        "projectUniqueName": "Z:\\B\\אינהורן ציבי\\.net core\\25-3-4\\.net-core-project\\myProjectCore.csproj",
         "projectName": "myProjectCore",
-        "projectPath": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\myProjectCore.csproj",
-        "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\obj\\",
+        "projectPath": "Z:\\B\\אינהורן ציבי\\.net core\\25-3-4\\.net-core-project\\myProjectCore.csproj",
+        "packagesPath": "C:\\Users\\huser\\.nuget\\packages\\",
+        "outputPath": "Z:\\B\\אינהורן ציבי\\.net core\\25-3-4\\.net-core-project\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\huser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -69,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

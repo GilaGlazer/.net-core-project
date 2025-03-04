@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "/7tK6/X9MAY=",
+  "dgSpecHash": "0wdiT8hWLdg=",
   "success": true,
-  "projectFilePath": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\myProjectCore.csproj",
+  "projectFilePath": "Z:\\B\\אינהורן ציבי\\.net core\\25-3-4\\.net-core-project\\myProjectCore.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\user1\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\user1\\.nuget\\packages\\microsoft.openapi\\1.6.22\\microsoft.openapi.1.6.22.nupkg.sha512",
-    "C:\\Users\\user1\\.nuget\\packages\\swashbuckle.aspnetcore\\7.3.0\\swashbuckle.aspnetcore.7.3.0.nupkg.sha512",
-    "C:\\Users\\user1\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.3.0\\swashbuckle.aspnetcore.swagger.7.3.0.nupkg.sha512",
-    "C:\\Users\\user1\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\7.3.0\\swashbuckle.aspnetcore.swaggergen.7.3.0.nupkg.sha512",
-    "C:\\Users\\user1\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\7.3.0\\swashbuckle.aspnetcore.swaggerui.7.3.0.nupkg.sha512"
+    "C:\\Users\\huser\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\huser\\.nuget\\packages\\microsoft.openapi\\1.6.22\\microsoft.openapi.1.6.22.nupkg.sha512",
+    "C:\\Users\\huser\\.nuget\\packages\\swashbuckle.aspnetcore\\7.3.0\\swashbuckle.aspnetcore.7.3.0.nupkg.sha512",
+    "C:\\Users\\huser\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.3.0\\swashbuckle.aspnetcore.swagger.7.3.0.nupkg.sha512",
+    "C:\\Users\\huser\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\7.3.0\\swashbuckle.aspnetcore.swaggergen.7.3.0.nupkg.sha512",
+    "C:\\Users\\huser\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\7.3.0\\swashbuckle.aspnetcore.swaggerui.7.3.0.nupkg.sha512"
   ],
   "logs": []
 }

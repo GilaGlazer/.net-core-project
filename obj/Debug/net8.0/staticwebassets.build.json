@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "wU6OkvEB5SQIJxrfio9rgEnqjJB0mPSCVLGjEunTpag=",
+  "Hash": "6iyBGGAtJNb9Gqecl4eMAI/yhjty2lKrx1xmfR6sMI8=",
   "Source": "myProjectCore",
   "BasePath": "_content/myProjectCore",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
