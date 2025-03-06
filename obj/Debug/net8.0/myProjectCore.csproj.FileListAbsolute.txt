@@ -66,3 +66,4 @@ Z:\B\אינהורן ציבי\.net core\25-3-4\.net-core-project\obj\Debug\net8.0
 Z:\B\אינהורן ציבי\.net core\25-3-4\.net-core-project\obj\Debug\net8.0\myProjectCore.pdb
 Z:\B\אינהורן ציבי\.net core\25-3-4\.net-core-project\obj\Debug\net8.0\myProjectCore.genruntimeconfig.cache
 Z:\B\אינהורן ציבי\.net core\25-3-4\.net-core-project\obj\Debug\net8.0\ref\myProjectCore.dll
+C:\תיכנות\יד\זילברברג\myProjectCore\obj\Debug\net8.0\myProjectCore.sourcelink.json

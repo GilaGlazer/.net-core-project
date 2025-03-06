@@ -22,6 +22,7 @@ if (app.Environment.IsDevelopment())
 
 
 ///////
+app.UseMailMiddleware();
 app.UseLog();
 app.UseErrorMiddleware();
 ///////
