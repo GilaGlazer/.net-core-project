@@ -7,7 +7,7 @@ namespace webApiProject.Middlewares;
 public class MailMiddleware
 {
     private readonly RequestDelegate next;
-
+    private static bool isMailSent = false;
     public MailMiddleware(RequestDelegate next)
     {
         this.next = next;
@@ -17,9 +17,13 @@ public class MailMiddleware
     {
         try
         {
-            Console.WriteLine("before mail");
-            SendMail();
-            Console.WriteLine("after mail");
+            if (!isMailSent) 
+            {
+                SendMail(new Exception("try to send mail"));
+                isMailSent = true; 
+            }
+
+            await next(c);
         }
         catch (Exception ex)
         {
@@ -28,17 +32,23 @@ public class MailMiddleware
         }
 
 
-        await next(c);
     }
 
-    private void SendMail()
+    private void SendMail(Exception ex)
     {
-        Console.WriteLine("in sentMail");
-        var fromAddress = new MailAddress("a0548436799@gmail.com", "my mother");
-        var toAddress = new MailAddress("g0583247266@gmail.com", "gila");
-        const string fromPassword = "089742178";
-        const string subject = "hiii";
-        const string body = "whathap?";
+        // var fromAddress = new MailAddress("r0583246798@gmail.com", "my brother");
+        // var toAddress = new MailAddress("g0583247266@gmail.com", "gila");
+        // const string fromPassword = "pxri qwzo dxhn jkxk";
+        // const string subject = "hiii";
+        // const string body = "whathap?";
+
+        var fromAddress = new MailAddress("r0583246798@gmail.com", "Error Notifier");
+        var toAddress = new MailAddress("g0583247266@gmail.com", "Admin");
+        const string fromPassword = "pxri qwzo dxhn jkxk"; 
+        string subject = "Application Error Notification";
+        string body = $"An error occurred in the application:\n\n" +
+                      $"Message: {ex.Message}\n" +
+                      $"Time: {DateTime.Now}";
 
         var smtp = new SmtpClient
         {
