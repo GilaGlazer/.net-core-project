@@ -6,7 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddShoesConst();
+builder.Services.AddShoesJson();
+builder.Services.AddUsersJson();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,13 +24,17 @@ if (app.Environment.IsDevelopment())
 
 
 ///////
-app.UseMailMiddleware();
+//app.UseMailMiddleware();
 app.UseLog();
 app.UseErrorMiddleware();
 ///////
 
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+/*js*/
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 
 app.UseAuthorization();
 

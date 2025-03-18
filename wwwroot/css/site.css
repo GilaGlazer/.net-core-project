@@ -1,0 +1,58 @@
+input[type='submit'],
+button,
+[aria-label] {
+    cursor: pointer;
+    background-color: #4CAF50; /* צבע רקע */
+    color: white; /* צבע טקסט */
+    border: none; /* ללא גבול */
+    padding: 10px 15px; /* רווח פנימי */
+    text-align: center; /* מרכז את הטקסט */
+    text-decoration: none; /* ללא קו תחתון */
+    display: inline-block; /* מציג כ-inline block */
+    font-size: 16px; /* גודל טקסט */
+    border-radius: 5px; /* פינות מעוגלות */
+    transition: background-color 0.3s; /* אנימציה לשינוי צבע */
+}
+
+input[type='submit']:hover,
+button:hover,
+[aria-label]:hover {
+    background-color: #45a049; /* צבע רקע כאשר מרחפים */
+}
+
+#editForm {
+    display: none;
+    margin-top: 20px; /* רווח מעל */
+    padding: 15px; /* רווח פנימי */
+    border: 1px solid #ccc; /* גבול אפור */
+    border-radius: 5px; /* פינות מעוגלות */
+    background-color: #f9f9f9; /* צבע רקע */
+}
+
+table {
+    font-family: Arial, sans-serif;
+    width: 100%; /* רוחב מלא */
+    border: 1px solid #ddd; /* גבול בהיר */
+    border-collapse: collapse;
+    margin-top: 20px; /* רווח מעל */
+}
+
+th {
+    background-color: #f2f2f2; /* צבע רקע של כותרות */
+    padding: 10px; /* רווח פנימי */
+    text-align: left; /* יישור טקסט לשמאל */
+}
+
+td {
+    border: 1px solid #ddd; /* גבול בהיר */
+    padding: 10px; /* רווח פנימי */
+}
+
+/* עיצוב עבור שורות זוגיות */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* צבע רקע שורות זוגיות */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* צבע רקע כאשר מרחפים על שורה */
+}
