@@ -1,6 +1,8 @@
+using webApiProject.Interfaces;
+
 namespace webApiProject.Models;
 
-public class Shoes
+public class Shoes:IIdentifiable
 {
     public int Id { get; set; }
 

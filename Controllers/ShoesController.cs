@@ -8,13 +8,13 @@ namespace webApiProject.Controllers;
 [Route("[controller]")]
 public class ShoesController : ControllerBase
 {
-    private IShoesService shoesService;
+    private readonly IService<Shoes> shoesService;
 
-    public ShoesController(IShoesService shoesService)
+    public ShoesController(IService<Shoes> shoesService)
     {
         this.shoesService = shoesService;
     }
-    
+
     [HttpGet]
     public ActionResult<IEnumerable<Shoes>> Get()
     {
@@ -31,18 +31,18 @@ public class ShoesController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult Post(Shoes newItem)
+    public ActionResult Post(Shoes newShoe)
     {
-        var newId = shoesService.Insert(newItem);
-        if (newId == -1)
+        var newId = shoesService.Insert(newShoe);
+        if (newId == null)
             return BadRequest();
         return CreatedAtAction(nameof(Post), new { Id = newId });
     }
 
     [HttpPut("{id}")]
-    public ActionResult Put(int id, Shoes newItem)
+    public ActionResult Put(int id, Shoes updatedShoe)
     {
-        if (shoesService.Update(id, newItem))
+        if (shoesService.Update(id, updatedShoe))
             return NoContent();
         return BadRequest();
     }

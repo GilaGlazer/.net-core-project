@@ -1,7 +1,7 @@
 using webApiProject.Models;
 namespace webApiProject.Interfaces;
 
-public interface IShoesService
+public interface IService
 {
 
      List<Shoes> Get();
