@@ -225,6 +225,7 @@ if (!File.Exists(filePath)) // Added
 
     public List<T> Get()
     {
+        System.Console.WriteLine("Get shoes");
         try // Added
         {
             return itemList.Where(i => i.UserId == activeUserService.UserId).ToList();
@@ -237,8 +238,14 @@ if (!File.Exists(filePath)) // Added
     }
     public T Get(int id)
     {
+        
         try // Added
         {
+            if(activeUserService.Type == "admin")
+            {
+                System.Console.WriteLine("admin want to get item");
+            return itemList.FirstOrDefault(i => i.Id == id );
+            }
             return itemList.FirstOrDefault(i => i.Id == id && i.UserId == activeUserService.UserId);
         }
         catch (Exception ex) // Added
@@ -306,13 +313,26 @@ if (!File.Exists(filePath)) // Added
 
     public bool Delete(int id)
     {
+        System.Console.WriteLine("in delete item service begin");
         try // Added
         {
+            if(activeUserService.Type == "admin")
+            {
+                System.Console.WriteLine("admin want to delete item");
+                var usersService = usersServiceFactory();
+                var user = usersService.Get(id);
+                if(user == null)
+                    return false;
+            }
             var item = itemList.FirstOrDefault(s => s.Id == id);
+            System.Console.WriteLine("in item delete "+item.Id);
             if (item == null || item.UserId != activeUserService.UserId)
                 return false;
             itemList.Remove(item);
+            System.Console.WriteLine("in delete item service before save");
             saveToFile();
+        System.Console.WriteLine("in delete item service after save");
+System.Console.WriteLine("item deleted");
             return true;
         }
         catch (Exception ex) // Added
@@ -375,4 +395,18 @@ if (!File.Exists(filePath)) // Added
             return false; // חזרה לערך ברירת מחדל במקרה של חריגה
         }
     }
+        public List<T> GetAllItems()
+    {
+        System.Console.WriteLine("Get all shoes");
+        try // Added
+        {
+            return itemList; // החזרת כל הרשימה
+        }
+        catch (Exception ex) // Added
+        {
+            Console.WriteLine($"Error in Get: {ex.Message}"); // Added
+            return new List<T>(); // חזרה לרשימה ריקה במקרה של חריגה
+        }
+    }
+
 }

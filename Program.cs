@@ -52,6 +52,7 @@ builder.Services.AddSwaggerGen(c =>
 
             
 builder.Services.AddScoped<ActiveUserService>(); // Register ActiveUserService as Scoped
+builder.Services.AddScoped<UsersServiceJson>(); // Added: Register UsersServiceJson explicitly
 builder.Services.AddScoped<IService<Users>, UsersServiceJson>(); // רישום השירות `UsersServiceJson`
 builder.Services.AddScoped<IService<Shoes>, ItemServiceJson<Shoes>>(); // רישום השירות `ItemServiceJson<Shoes>`
 
