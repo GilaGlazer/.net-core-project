@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace webApiProject.Services
 {
-    public static class UsersTokenService
+    public static class AuthTokenService
     {
         private static SymmetricSecurityKey key
             = new SymmetricSecurityKey(
@@ -34,5 +34,17 @@ namespace webApiProject.Services
 
         public static string WriteToken(SecurityToken token) =>
             new JwtSecurityTokenHandler().WriteToken(token);
+
+        public static int GetUserIdFromToken(string token)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+
+            // חיפוש Claim עם שם "userId" או כל Claim אחר שמכיל את ה-ID של המשתמש
+            var userIdClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == "userId");
+            if(!int.TryParse(userIdClaim?.Value,out int id))
+                return int.Parse(userIdClaim?.Value);
+            return -1; // מחזיר את ה-ID כ-String או null אם לא נמצא
+        }
     }
 }

@@ -43,7 +43,7 @@ public class MailMiddleware
         // const string body = "whathap?";
 
         var fromAddress = new MailAddress("r0583246798@gmail.com", "Error Notifier");
-        var toAddress = new MailAddress("g0583247266@gmail.com", "Admin");
+        var toAddress = new MailAddress("g0583247266@gmail.com", "admin");
         const string fromPassword = "pxri qwzo dxhn jkxk"; 
         string subject = "Application Error Notification";
         string body = $"An error occurred in the application:\n\n" +

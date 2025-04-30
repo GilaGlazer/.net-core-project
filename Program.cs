@@ -4,6 +4,8 @@ using webApiProject.Services;
 using Scalar.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using webApiProject.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,19 +17,15 @@ builder.Services.AddAuthentication(options =>
                 {
                     cfg.RequireHttpsMetadata = false;
                     cfg.TokenValidationParameters =
-                        UsersTokenService.GetTokenValidationParameters();
+                        AuthTokenService.GetTokenValidationParameters();
                 });
 
 builder.Services.AddAuthorization(cfg =>
         {
-            cfg.AddPolicy("Admin",
-                policy => policy.RequireClaim("type", "Admin"));
-            cfg.AddPolicy("Agent",
-                policy => policy.RequireClaim("type", "Agent", "Admin"));
-            cfg.AddPolicy("ClearanceLevel1",
-                policy => policy.RequireClaim("ClearanceLevel", "1", "2"));
-            cfg.AddPolicy("ClearanceLevel2",
-                policy => policy.RequireClaim("ClearanceLevel", "2"));
+            cfg.AddPolicy("user",
+                policy => policy.RequireClaim("type", "user", "admin"));
+            cfg.AddPolicy("admin",
+                policy => policy.RequireClaim("type", "admin"));
         });
 
 builder.Services.AddSwaggerGen(c =>
@@ -50,10 +48,18 @@ builder.Services.AddSwaggerGen(c =>
                 });
             });
 
-builder.Services.AddControllers();
-builder.Services.AddItemJson<Shoes>();
-builder.Services.AddItemJson<Users>();
 
+
+            
+builder.Services.AddScoped<ActiveUserService>(); // Register ActiveUserService as Scoped
+builder.Services.AddScoped<IService<Users>, UsersServiceJson>(); // רישום השירות `UsersServiceJson`
+builder.Services.AddScoped<IService<Shoes>, ItemServiceJson<Shoes>>(); // רישום השירות `ItemServiceJson<Shoes>`
+
+// הוספת Factory
+builder.Services.AddScoped<Func<IService<Users>>>(sp => () => sp.GetRequiredService<IService<Users>>());
+builder.Services.AddScoped<Func<IService<Shoes>>>(sp => () => sp.GetRequiredService<IService<Shoes>>());
+
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -64,8 +70,6 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    // app.UseSwaggerUI();
-    //   app.MapOpenApi();
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
@@ -75,24 +79,16 @@ if (app.Environment.IsDevelopment())
     );
 }
 
-
-///////
-//app.UseMailMiddleware();
 app.UseLog();
 app.UseErrorMiddleware();
-///////
 
-
-//app.UseHttpsRedirection();
-/*js*/
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-
+app.UseAuthentication();
+app.UseMiddleware<UserMiddleware>(); 
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
-
-

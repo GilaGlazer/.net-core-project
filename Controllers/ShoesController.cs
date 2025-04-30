@@ -1,11 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using webApiProject.Models;
 using webApiProject.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using webApiProject.Services;
+using System.Security.Claims;
 
 namespace webApiProject.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize(Policy = "user")]
+
 public class ShoesController : ControllerBase
 {
     private readonly IService<Shoes> shoesService;
@@ -18,12 +23,14 @@ public class ShoesController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Shoes>> Get()
     {
+        System.Console.WriteLine("Get shoes");
         return shoesService.Get();
     }
 
     [HttpGet("{id}")]
     public ActionResult<Shoes> Get(int id)
     {
+        System.Console.WriteLine("Get shoes with id");
         var shoe = shoesService.Get(id);
         if (shoe == null)
             return NotFound();
@@ -34,7 +41,7 @@ public class ShoesController : ControllerBase
     public ActionResult Post(Shoes newShoe)
     {
         var newId = shoesService.Insert(newShoe);
-        if (newId == null)
+        if (newId == -1)
             return BadRequest();
         return CreatedAtAction(nameof(Post), new { Id = newId });
     }

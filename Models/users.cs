@@ -2,7 +2,7 @@ using webApiProject.Interfaces;
 
 namespace webApiProject.Models;
 
-public class Users:IIdentifiable
+public class Users
 {
     public int Id { get; set; }
     public string UserName { get; set; }

@@ -6,11 +6,11 @@
 
 // [ApiController]
 // [Route("[controller]")]
-// public class AdminController : ControllerBase
+// public class adminController : ControllerBase
 // {
 //     private readonly IService<Shoes> shoesService;
 
-//     public AdminController(IService<Shoes> shoesService)
+//     public adminController(IService<Shoes> shoesService)
 //     {
 //         this.shoesService = shoesService;
 //     }

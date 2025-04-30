@@ -11,75 +11,41 @@ namespace webApiProject.Controllers;
 [Route("[controller]")]
 public class UsersController : ControllerBase
 {
-    private readonly IService<Users> usersService;
-    public UsersController(IService<Users> usersService)
+    private readonly UsersServiceJson usersService;
+    public UsersController(UsersServiceJson usersService)
     {
+        System.Console.WriteLine("in Ctor UsersController");
         this.usersService = usersService;
     }
 
-    // [HttpPost]
-    // [Route("[action]")]
-    // public ActionResult<String> Login([FromBody] Users User)
-    // {
-    //     // Users? author = UsersTokenService.GetTokenValidationParameters().FirstOrDefault(au => au.Id == loginRequest.Id && au.Name == loginRequest.Name);
-
-    //     if (User.Type != "Admin" ||
-    //         User.Password!= "1234" )
-    //     {
-    //         return Unauthorized();
-    //     }
-
-    //     var claims = new List<Claim>
-    //         {
-    //             new Claim("type", "Admin"),
-    //             new Claim("ClearanceLevel", "2"),
-    //         };
-
-    //     var token = UsersTokenService.GetToken(claims);
-
-    //     return new OkObjectResult(UsersTokenService.WriteToken(token));
-    // }
-
-
-    // [HttpPost]
-    // [Route("[action]")]
-    // [Authorize(Policy = "Admin")]
-    // public IActionResult GenerateBadge([FromBody] Agent Agent)
-    // {
-    //     var claims = new List<Claim>
-    //         {
-    //             new Claim("type", "Agent"),
-    //             new Claim("ClearanceLevel", Agent.ClearanceLevel.ToString()),
-    //         };
-
-    //     var token = UsersTokenService.GetToken(claims);
-
-    //     return new OkObjectResult(UsersTokenService.WriteToken(token));
-    // }
-    
-
-
-
-
     [HttpGet]
+    [Authorize(Policy = "admin")]
     public ActionResult<IEnumerable<Users>> Get()
     {
-        System.Console.WriteLine("Get all users");
+        System.Console.WriteLine("in Get controller");
+
         return usersService.Get();
     }
 
     [HttpGet("{id}")]
+    [Authorize(Policy = "user")]
     public ActionResult<Users> Get(int id)
     {
-        var user = usersService.Get(id);
+        System.Console.WriteLine("in Get whit id controller");
+
+        var user = usersService.GetMyUser();
         if (user == null)
             return NotFound();
         return user;
     }
 
     [HttpPost]
+    [Authorize(Policy = "admin")]
+
     public ActionResult Post(Users newItem)
     {
+        System.Console.WriteLine("in post controller");
+
         var newId = usersService.Insert(newItem);
         if (newId == -1)
             return BadRequest();
@@ -87,16 +53,23 @@ public class UsersController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Policy = "admin")]
+
     public ActionResult Put(int id, Users newItem)
     {
+        System.Console.WriteLine("in Put controller");
+
         if (usersService.Update(id, newItem))
             return NoContent();
         return BadRequest();
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Policy = "admin")]
+
     public ActionResult Delete(int id)
     {
+        System.Console.WriteLine("in Delete controller");
         if (usersService.Delete(id))
             return Ok();
         return NotFound();

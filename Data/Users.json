@@ -1,1 +1,37 @@
-[{"Id":1,"UserName":"David","Password":"password1","Email":"david@example.com","Type":"user"},{"Id":2,"UserName":"gila","Password":"1234","Email":"g@gmail.com","Type":"admin"}]
+[
+    {
+        "Id": 1,
+        "UserName": "David",
+        "Password": "123456",
+        "Email": "david@example.com",
+        "Type": "user"
+    },
+    {
+        "Id": 2,
+        "UserName": "gila",
+        "Password": "1",
+        "Email": "g",
+        "Type": "admin"
+    },
+    {
+        "Id": 3,
+        "UserName": "tzivi",
+        "Password": "987654",
+        "Email": "t@gmail.com",
+        "Type": "admin"
+    },
+    {
+        "Id": 4,
+        "UserName": "Moshe",
+        "Password": "111222",
+        "Email": "moshe@yeshiva.com",
+        "Type": "user"
+    },
+    {
+        "Id": 5,
+        "UserName": "Leah",
+        "Password": "333444",
+        "Email": "leah@beityaakov.com",
+        "Type": "user"
+    }
+]
