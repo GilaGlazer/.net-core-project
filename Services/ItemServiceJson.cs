@@ -130,6 +130,7 @@ if (!File.Exists(filePath)) // Added
             var item = itemList.FirstOrDefault(s => s.Id == id);
             if (item == null || item.UserId != activeUserService.UserId)
                 return false;
+            newItem.UserId= activeUserService.UserId;
             foreach (var property in typeof(T).GetProperties())
             {
                 if (property.CanWrite)

@@ -18,9 +18,13 @@ namespace webApiProject.Controllers
         }
 
         [HttpPost]
-        [Route("[action]")]
-        public ActionResult<String> Login([FromBody] Users user)
+        // [Route("[action]")]
+        [Route("")]
+
+        public ActionResult<String> Login([FromBody] LoginRequest user)
         {
+                        System.Console.WriteLine(user.Email);
+
             if (string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Password))
                 return BadRequest("Email and Password are required.");
 

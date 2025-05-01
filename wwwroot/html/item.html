@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Shoes CRUD</title>
-    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="../css/item.css" />
+    <script src="../js/item.js"></script>
 </head>
 
 <body>
-    <h1>Shoes CRUD</h1>
     <h1>Gila & Tzivi store</h1>
     <h3>Add Shoes</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
@@ -43,7 +43,7 @@
         <tbody id="shoes"></tbody>
     </table>
 
-    <script src="js/site.js" asp-append-version="true"></script>
+    <script src="js/item.js" asp-append-version="true"></script>
     <script type="text/javascript">
         getItems();
     </script>

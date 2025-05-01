@@ -1,24 +1,40 @@
 {
   "Files": [
     {
-      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\item.css",
+      "PackagePath": "staticwebassets\\css\\item.css"
     },
     {
-      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\html\\item.html",
+      "PackagePath": "staticwebassets\\html\\item.html"
+    },
+    {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\html\\login.html",
+      "PackagePath": "staticwebassets\\html\\login.html"
+    },
+    {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\html\\user.html",
+      "PackagePath": "staticwebassets\\html\\user.html"
+    },
+    {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\images\\google-icon.png",
+      "PackagePath": "staticwebassets\\images\\google-icon.png"
+    },
+    {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\item.js",
+      "PackagePath": "staticwebassets\\js\\item.js"
+    },
+    {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\user.js",
       "PackagePath": "staticwebassets\\js\\user.js"
-    },
-    {
-      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\user.html",
-      "PackagePath": "staticwebassets\\user.html"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.myProjectCore.props",

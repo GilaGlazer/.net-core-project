@@ -82,7 +82,11 @@ if (app.Environment.IsDevelopment())
 app.UseLog();
 app.UseErrorMiddleware();
 
-app.UseDefaultFiles();
+app.UseDefaultFiles(new DefaultFilesOptions
+{
+    DefaultFileNames = new List<string> { "html/login.html" }
+});
+
 app.UseStaticFiles();
 
 app.UseAuthentication();
