@@ -35,20 +35,6 @@
         "UserId": 5
     },
     {
-        "Id": 6,
-        "Name": "Loafer",
-        "Size": 40,
-        "Color": "Brown",
-        "UserId": 6
-    },
-    {
-        "Id": 7,
-        "Name": "Moccasin",
-        "Size": 41,
-        "Color": "Tan",
-        "UserId": 6
-    },
-    {
         "Id": 8,
         "Name": "Running Shoes",
         "Size": 42,
@@ -201,12 +187,5 @@
         "Size": 47,
         "Color": "Red",
         "UserId": 29
-    },
-    {
-        "Id": 30,
-        "Name": "Soccer Cleats",
-        "Size": 48,
-        "Color": "Blue",
-        "UserId": 30
     }
 ]

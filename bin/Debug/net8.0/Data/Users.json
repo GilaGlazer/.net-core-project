@@ -28,13 +28,6 @@
         "Type": "user"
     },
     {
-        "Id": 6,
-        "UserName": "user6",
-        "Password": "password6",
-        "Email": "user6@example.com",
-        "Type": "user"
-    },
-    {
         "Id": 7,
         "UserName": "user7",
         "Password": "password7",
