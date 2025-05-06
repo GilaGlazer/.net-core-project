@@ -93,16 +93,16 @@ public class UsersServiceJson : IService<Users>
 
     public Users Get(int id)
     {
-        // try // Added
-        // {
+        try // Added
+        {
         //     System.Console.WriteLine(usersList.FirstOrDefault(u => u.Id == id));
-        //     return usersList.FirstOrDefault(u => u.Id == id);
-        // }
-        // catch (Exception ex) // Added
-        // {
-        //     Console.WriteLine($"Error in Get by ID: {ex.Message}"); // Added
-            return null; // Added: החזר null במקרה של חריגה
-        // }
+        return usersList.FirstOrDefault(u => u.Id == id);
+        }
+        catch (Exception ex) // Added
+        {
+        Console.WriteLine($"Error in Get by ID: {ex.Message}"); // Added
+             return null; // Added: החזר null במקרה של חריגה
+        }
     }
 
     public int Insert(Users newItem)

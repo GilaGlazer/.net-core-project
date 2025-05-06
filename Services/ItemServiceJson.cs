@@ -95,6 +95,8 @@ if (!File.Exists(filePath)) // Added
     {
         try // Added
         {
+            System.Console.WriteLine("----------------------------------------------------------------------------------Insert item service");
+            System.Console.WriteLine(newItem.UserId);
             if (!CheckValueRequest(newItem))
                 return -1;
             if (activeUserService.Type == "admin")
@@ -105,6 +107,7 @@ if (!File.Exists(filePath)) // Added
                 var user = usersService.Get(newItem.UserId);
                 if (user == null)
                     return -1;
+                    System.Console.WriteLine("-----------");
             }
             else newItem.UserId = activeUserService.UserId;
             //    Console.WriteLine("Insert item: " + newItem.ToString());

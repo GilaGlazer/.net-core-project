@@ -20,7 +20,8 @@ button:hover,
     background-color: #45a049; /* צבע רקע כאשר מרחפים */
 }
 
-#editForm {
+/* טופס עריכת משתמש */
+#editUserForm {
     display: none;
     margin-top: 20px; /* רווח מעל */
     padding: 15px; /* רווח פנימי */
@@ -29,6 +30,7 @@ button:hover,
     background-color: #f9f9f9; /* צבע רקע */
 }
 
+/* טבלה */
 table {
     font-family: Arial, sans-serif;
     width: 100%; /* רוחב מלא */
@@ -48,6 +50,7 @@ td {
     padding: 10px; /* רווח פנימי */
 }
 
+/* עיצוב עבור שורות זוגיות */
 tr:nth-child(even) {
     background-color: #f9f9f9; /* צבע רקע שורות זוגיות */
 }
@@ -55,53 +58,22 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1; /* צבע רקע כאשר מרחפים על שורה */
 }
-#user-info {
-    margin-bottom: 30px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-/* עיצוב עבור כפתורי LOGIN ו-LOGOUT */
-#auth-buttons {
-    display: flex;
-    justify-content: flex-end;
+
+/* עיצוב עבור כותרת הדף */
+h1 {
+    color: #333;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-#auth-buttons button {
-    cursor: pointer;
-    background-color: #4CAF50; /* צבע רקע */
-    color: white; /* צבע טקסט */
-    border: none; /* ללא גבול */
-    padding: 10px 15px; /* רווח פנימי */
-    text-align: center; /* מרכז את הטקסט */
-    font-size: 16px; /* גודל טקסט */
-    border-radius: 5px; /* פינות מעוגלות */
-    margin-left: 10px; /* רווח בין הכפתורים */
-    transition: background-color 0.3s; /* אנימציה לשינוי צבע */
+/* עיצוב עבור ספירת משתמשים */
+#user-counter {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
 }
 
-#auth-buttons button:hover {
-    background-color: #45a049; /* צבע רקע כאשר מרחפים */
-}
-
-#auth-buttons button {
-    cursor: pointer;
-    background-color: #4CAF50; /* צבע רקע */
-    color: white; /* צבע טקסט */
-    border: none; /* ללא גבול */
-    padding: 10px 15px; /* רווח פנימי */
-    text-align: center; /* מרכז את הטקסט */
-    font-size: 16px; /* גודל טקסט */
-    border-radius: 5px; /* פינות מעוגלות */
-    margin-left: 10px; /* רווח בין הכפתורים */
-    transition: background-color 0.3s; /* אנימציה לשינוי צבע */
-}
-
-#auth-buttons button:hover {
-    background-color: #45a049; /* צבע רקע כאשר מרחפים */
-}
+/* עיצוב כפתורים */
 button {
     cursor: pointer;
     background-color: #4CAF50;
@@ -117,6 +89,7 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
 /* עיצוב חלונות מוקפצים (Modal) */
 .modal {
     display: none;
@@ -172,7 +145,6 @@ button:hover {
 form input[type="text"],
 form input[type="password"],
 form input[type="email"],
-form input[type="number"],
 form input[type="submit"] {
     width: 90%;
     padding: 10px;

@@ -31,7 +31,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
 
         alert("Sign In successful!");
         // Redirect to another page if needed
-        window.location.href = "html/item.html";
+        window.location.href = "/html/item.html";
     } catch (error) {
         alert(error.message);
     }

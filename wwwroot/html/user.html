@@ -1,51 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Users CRUD</title>
-    <link rel="stylesheet" href="css/item.css" />
+    <title>Users Management</title>
+    <link rel="stylesheet" href="../css/user.css" />
     <script src="../js/user.js"></script>
 </head>
 
 <body>
     <h1>Users Management</h1>
-    <h3>Add User</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
-        <input type="text" id="add-username" placeholder="New Username">
-        <input type="password" id="add-password" placeholder="Password">
-        <input type="email" id="add-email" placeholder="Email">
-        <input type="text" id="add-type" placeholder="Type (user/admin)">
-        <input type="submit" value="Add">
-    </form>
-
-    <div id="editUserForm">
-        <h3>Edit User</h3>
-        <form action="javascript:void(0);" onsubmit="updateUser()">
-            <input type="hidden" id="edit-id">
-            <input type="text" id="edit-username" placeholder="Username">
-            <input type="password" id="edit-password" placeholder="Password">
-            <input type="email" id="edit-email" placeholder="Email">
-            <input type="text" id="edit-type" placeholder="Type (user/admin)">
-            <input type="submit" value="Save">
-            <a onclick="closeUserInput()" aria-label="Close">&#10006;</a>
-        </form>
+    <div id="auth-buttons">
+        <button id="logout-button" onclick="logoutUser()">Logout</button>
+        <button id="add-user-button" onclick="openAddUserModal()">Add User</button>
     </div>
 
     <p id="user-counter"></p>
 
     <table>
-        <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Type</th>
-            <th></th>
-            <th></th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Type</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
         <tbody id="users"></tbody>
     </table>
 
-    <script src="js/item.js" asp-append-version="true"></script>
+    <!-- חלון מוקפץ להוספת משתמש -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddUserModal()">&times;</span>
+            <h3>Add User</h3>
+            <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
+                <input type="text" id="add-username" placeholder="Enter Username" required>
+                <input type="password" id="add-password" placeholder="Enter Password" required>
+                <input type="email" id="add-email" placeholder="Enter Email" required>
+                <input type="text" id="add-type" placeholder="Enter Type (user/admin)" required>
+                <input type="submit" value="Add User">
+            </form>
+        </div>
+    </div>
+
+    <!-- חלון מוקפץ לעריכת משתמש -->
+    <div id="editUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditUserModal()">&times;</span>
+            <h3>Edit User</h3>
+            <form action="javascript:void(0);" onsubmit="updateUser()">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-username" placeholder="Edit Username" required>
+                <input type="password" id="edit-password" placeholder="Edit Password">
+                <input type="email" id="edit-email" placeholder="Edit Email" required>
+                <input type="text" id="edit-type" placeholder="Edit Type (user/admin)" required>
+                <input type="submit" value="Save Changes">
+            </form>
+        </div>
+    </div>
+
     <script type="text/javascript">
         getUsers();
     </script>

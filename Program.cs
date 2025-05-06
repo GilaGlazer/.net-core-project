@@ -84,7 +84,7 @@ app.UseErrorMiddleware();
 
 app.UseDefaultFiles(new DefaultFilesOptions
 {
-    DefaultFileNames = new List<string> { "html/login.html" }
+    DefaultFileNames = new List<string> { "/html/item.html" }
 });
 
 app.UseStaticFiles();

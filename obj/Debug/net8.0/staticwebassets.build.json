@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RQfwSJPQAbS5SqUVDxWmanfMMxa4tZoyAxa3BubfR9k=",
+  "Hash": "suMlBNR988Xyn5edfmjU1wBho8uDOYNoluTT7tmdlu4=",
   "Source": "myProjectCore",
   "BasePath": "_content/myProjectCore",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
+    },
+    {
+      "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\user.css",
+      "SourceId": "myProjectCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\",
+      "BasePath": "_content/myProjectCore",
+      "RelativePath": "css/user.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\user.css"
     },
     {
       "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\html\\item.html",

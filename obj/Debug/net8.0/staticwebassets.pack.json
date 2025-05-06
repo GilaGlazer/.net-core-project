@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\user.css",
+      "PackagePath": "staticwebassets\\css\\user.css"
+    },
+    {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\html\\item.html",
       "PackagePath": "staticwebassets\\html\\item.html"
     },
