@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Uw/McSzXy1M=",
+  "dgSpecHash": "TKU/eW5/FvM=",
   "success": true,
   "projectFilePath": "C:\\Users\\user1\\Desktop\\תכנות יד שנה ב\\.net core\\homework\\25-5-5\\.net-core-project\\myProjectCore.csproj",
   "expectedPackageFiles": [
@@ -36,7 +36,7 @@
       "message": "Package 'Microsoft.AspNetCore.Authentication.JwtBearer' 5.0.4 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-q7cg-43mg-qp69",
       "libraryId": "Microsoft.AspNetCore.Authentication.JwtBearer",
       "targetGraphs": [
-        "net8.0"
+        "net9.0"
       ]
     }
   ]

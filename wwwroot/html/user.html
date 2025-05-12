@@ -5,21 +5,27 @@
     <meta charset="UTF-8">
     <title>Users Management</title>
     <link rel="stylesheet" href="../css/user.css" />
-    <script src="../js/user.js"></script>   
+    <link rel="stylesheet" href="../css/general.css" />
+    <script src="../js/user.js"></script>
     <script src="../js/general.js"></script>
-
 </head>
 
 <body>
-    <h1>Users Management</h1>
-    <div id="auth-buttons">
-        <button id="logout-button" onclick="logoutUser()">Logout</button>
-        <button id="add-user-button" onclick="openAddUserModal()">Add User</button>
-        <button id="show-item-button" onclick="redirectToItemsPage()">Show Items</button>
 
-    </div>
+    <header>
+        <div id="header-buttons">
+            <div id="left-buttons">
+                <button id="logout-button" onclick="logoutUser()">Logout</button>
+            </div>
+            <h1>Users Management</h1>
+            <div id="right-buttons">
+                <button id="show-users-button" onclick="redirectToItemsPage()">Go To Shoes</button>
+            </div>
+        </div>
+    </header>
 
-    <p id="user-counter"></p>
+    <button id="add-user-button" onclick="openAddUserModal()">Add User</button>
+
 
     <table>
         <thead>
@@ -41,14 +47,14 @@
             <span class="close" onclick="closeAddUserModal()">&times;</span>
             <h3>Add User</h3>
             <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
-                <input type="text" id="add-username" placeholder="Enter User Name" required>
+                <input type="text" id="add-username" placeholder="Enter Username" required>
                 <input type="text" id="add-password" placeholder="Enter Password" required>
                 <input type="email" id="add-email" placeholder="Enter Email" required>
                 <!-- <input type="text" id="add-type" placeholder="Enter Type (user/admin)" required> -->
-               <select  id="add-type" required>
-                <option value="user">user</option>
-                <option value="admin">admin</option>
-               </select> 
+                <select id="edit-type" required>
+                    <option value="user">user</option>
+                    <option value="admin">admin</option>
+                </select>
                 <input type="submit" value="Add User">
             </form>
         </div>
@@ -64,10 +70,12 @@
                 <input type="text" id="edit-username" placeholder="Edit Username" required>
                 <input type="text" id="edit-password" placeholder="Edit Password">
                 <input type="email" id="edit-email" placeholder="Edit Email" required>
-                <select  id="edit-type" required>
+                <select id="edit-type" required>
                     <option value="user">user</option>
                     <option value="admin">admin</option>
-                   </select>                 <input type="submit" value="Save Changes">
+                </select>
+                <!-- <input type="text" id="edit-type" placeholder="Edit Type (user/admin)" required> -->
+                <input type="submit" value="Save Changes">
             </form>
         </div>
     </div>

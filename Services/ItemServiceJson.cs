@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
-using webApiProject.Models;
 using webApiProject.Interfaces;
+using webApiProject.Models;
+
 namespace webApiProject.Services;
+
 using System.Text.Json;
 using System.Text.RegularExpressions;
 
-public class ItemServiceJson<T> : IService<T> where T : class, IIdentifiable, new()
+public class ItemServiceJson<T> : IService<T>
+    where T : class, IIdentifiable, new()
 {
     private readonly ActiveUserService activeUserService;
     private readonly Func<IService<Users>> usersServiceFactory; // Factory ליצירת השירות Users
@@ -13,14 +16,19 @@ public class ItemServiceJson<T> : IService<T> where T : class, IIdentifiable, ne
     private List<T> itemList;
     private static string fileName = typeof(T).Name + ".json";
     private string filePath;
-    public ItemServiceJson(IHostEnvironment env, ActiveUserService activeUserService,  Func<IService<Users>> usersServiceFactory)
+
+    public ItemServiceJson(
+        IHostEnvironment env,
+        ActiveUserService activeUserService,
+        Func<IService<Users>> usersServiceFactory
+    )
     {
         try // Added
         {
             this.activeUserService = activeUserService;
             this.usersServiceFactory = usersServiceFactory;
             filePath = Path.Combine(env.ContentRootPath, "Data", fileName);
-if (!File.Exists(filePath)) // Added
+            if (!File.Exists(filePath)) // Added
             {
                 Console.WriteLine($"File {filePath} does not exist. Creating a new empty list."); // Added
                 itemList = new List<T>();
@@ -29,11 +37,11 @@ if (!File.Exists(filePath)) // Added
             }
             using (var jsonFile = File.OpenText(filePath))
             {
-                itemList = JsonSerializer.Deserialize<List<T>>(jsonFile.ReadToEnd(),
-                new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                }) ?? new List<T>();
+                itemList =
+                    JsonSerializer.Deserialize<List<T>>(
+                        jsonFile.ReadToEnd(),
+                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+                    ) ?? new List<T>();
             }
         }
         catch (Exception ex) // Added
@@ -42,6 +50,7 @@ if (!File.Exists(filePath)) // Added
             itemList = new List<T>(); // יצירת רשימה ריקה כברירת מחדל אם יש בעיה
         }
     }
+
     private void saveToFile()
     {
         try // Added
@@ -60,10 +69,10 @@ if (!File.Exists(filePath)) // Added
         System.Console.WriteLine("Get shoes");
         try // Added
         {
-             if(activeUserService.Type == "admin")
+            if (activeUserService.Type == "admin")
             {
                 System.Console.WriteLine("admin want to get item");
-            return itemList;
+                return itemList;
             }
             return itemList.Where(i => i.UserId == activeUserService.UserId).ToList();
         }
@@ -73,15 +82,15 @@ if (!File.Exists(filePath)) // Added
             return new List<T>(); // חזרה לרשימה ריקה במקרה של חריגה
         }
     }
+
     public T Get(int id)
     {
-        
         try // Added
         {
-            if(activeUserService.Type == "admin")
+            if (activeUserService.Type == "admin")
             {
                 System.Console.WriteLine("admin want to get item");
-            return itemList.FirstOrDefault(i => i.Id == id );
+                return itemList.FirstOrDefault(i => i.Id == id);
             }
             return itemList.FirstOrDefault(i => i.Id == id && i.UserId == activeUserService.UserId);
         }
@@ -91,26 +100,24 @@ if (!File.Exists(filePath)) // Added
             return null; // חזרה לערך ברירת מחדל במקרה של חריגה
         }
     }
+
     public int Insert(T newItem)
     {
         try // Added
         {
-            System.Console.WriteLine("----------------------------------------------------------------------------------Insert item service");
-            System.Console.WriteLine(newItem.UserId);
             if (!CheckValueRequest(newItem))
                 return -1;
             if (activeUserService.Type == "admin")
-            {       
+            {
                 if (string.IsNullOrEmpty(newItem.UserId.ToString()))
                     return -1;
                 var usersService = usersServiceFactory();
                 var user = usersService.Get(newItem.UserId);
                 if (user == null)
                     return -1;
-                    System.Console.WriteLine("-----------");
             }
-            else newItem.UserId = activeUserService.UserId;
-            //    Console.WriteLine("Insert item: " + newItem.ToString());
+            else
+                newItem.UserId = activeUserService.UserId;
             int lastId = itemList.Any() ? itemList.Max(s => s.Id) : 0; // Updated to handle empty list
             newItem.Id = lastId + 1;
             itemList.Add(newItem);
@@ -131,9 +138,18 @@ if (!File.Exists(filePath)) // Added
             if (!CheckValueRequest(newItem) || newItem.Id != id)
                 return false;
             var item = itemList.FirstOrDefault(s => s.Id == id);
-            if (item == null || item.UserId != activeUserService.UserId)
+            if (item == null)
                 return false;
-            newItem.UserId= activeUserService.UserId;
+            if (activeUserService.Type != "admin")
+                newItem.UserId = activeUserService.UserId;
+            else
+            {
+                var usersService = usersServiceFactory();
+                var user = usersService.Get(newItem.UserId);
+                if (user == null)
+                    return false;
+            }
+
             foreach (var property in typeof(T).GetProperties())
             {
                 if (property.CanWrite)
@@ -151,31 +167,33 @@ if (!File.Exists(filePath)) // Added
             return false; // חזרה לערך ברירת מחדל במקרה של חריגה
         }
     }
-public bool Delete(int id)
-{
-    System.Console.WriteLine("in delete item service begin");
-    try
+
+    public bool Delete(int id)
     {
-        var item = itemList.FirstOrDefault(s => s.Id == id);
-                // בדיקה אם המשתמש הוא בעל הפריט או מנהל
-        if (item == null || (activeUserService.Type != "admin" && item.UserId != activeUserService.UserId))
+        System.Console.WriteLine("in delete item service begin");
+        try
+        {
+            var item = itemList.FirstOrDefault(s => s.Id == id);
+            // בדיקה אם המשתמש הוא בעל הפריט או מנהל
+            if (
+                item == null
+                || (activeUserService.Type != "admin" && item.UserId != activeUserService.UserId)
+            )
+                return false;
+
+            itemList.Remove(item);
+            System.Console.WriteLine("in delete item service before save");
+            saveToFile();
+            System.Console.WriteLine("in delete item service after save");
+            System.Console.WriteLine("item deleted");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in Delete: {ex.Message}");
             return false;
-
-        itemList.Remove(item);
-        System.Console.WriteLine("in delete item service before save");
-        saveToFile();
-        System.Console.WriteLine("in delete item service after save");
-        System.Console.WriteLine("item deleted");
-        return true;
+        }
     }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error in Delete: {ex.Message}");
-        return false;
-    }
-}
-
-
 
     private bool CheckValueRequest(T newItem)
     {
@@ -189,8 +207,13 @@ public bool Delete(int id)
                 { "Name", value => !string.IsNullOrWhiteSpace(value?.ToString()) },
                 { "Color", value => !string.IsNullOrWhiteSpace(value?.ToString()) },
                 { "Size", value => value is int size && size >= 18 && size < 50 },
-                { "Email", value => !string.IsNullOrWhiteSpace(value?.ToString()) && IsValidEmail(value.ToString()) },
-                { "Password", value => !string.IsNullOrWhiteSpace(value?.ToString()) }
+                {
+                    "Email",
+                    value =>
+                        !string.IsNullOrWhiteSpace(value?.ToString())
+                        && IsValidEmail(value.ToString())
+                },
+                { "Password", value => !string.IsNullOrWhiteSpace(value?.ToString()) },
             };
 
             foreach (var propertyCheck in propertiesToCheck)
@@ -229,7 +252,8 @@ public bool Delete(int id)
             return false; // חזרה לערך ברירת מחדל במקרה של חריגה
         }
     }
-        public List<T> GetAllItems()
+
+    public List<T> GetAllItems()
     {
         System.Console.WriteLine("Get all shoes");
         try // Added
@@ -242,5 +266,13 @@ public bool Delete(int id)
             return new List<T>(); // חזרה לרשימה ריקה במקרה של חריגה
         }
     }
+}
 
+public static partial class ServiceUlilities
+{
+    public static IServiceCollection AddItemService(this IServiceCollection services)
+    {
+        services.AddScoped<IService<Users>, UsersServiceJson>();
+        return services;
+    }
 }

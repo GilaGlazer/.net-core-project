@@ -20,17 +20,18 @@ namespace webApiProject.Controllers
         [HttpPost]
         // [Route("[action]")]
         [Route("")]
-
         public ActionResult<String> Login([FromBody] LoginRequest user)
         {
-            Console.WriteLine(user.Email);
+            System.Console.WriteLine(user.Email);
 
             if (string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Password))
                 return BadRequest("Email and Password are required.");
-            Users existingUser = usersService.Get().FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
-            if (existingUser == null){
+
+            Users existingUser = usersService
+                .Get()
+                .FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
+            if (existingUser == null)
                 return NotFound("Invalid email or password.");
-            }
             var claims = new List<Claim> { new Claim("userId", existingUser.Id.ToString()) };
             if (user.Email != "g" || user.Password != "1")
                 claims.Add(new Claim("type", "user"));
@@ -55,9 +56,5 @@ namespace webApiProject.Controllers
 
         //     return new OkObjectResult(AuthTokenService.WriteToken(token));
         // }
-
     }
-
-
-
 }

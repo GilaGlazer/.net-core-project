@@ -3,75 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shoes CRUD</title>
+    <title>Shoes Management</title>
     <link rel="stylesheet" href="../css/item.css" />
-    <script src="../js/item.js"></script>
-    <script src="../js/general.js"></script>
+    <link rel="stylesheet" href="../css/general.css" />
 
+    <script src="../js/item.js" defer></script>
+    <script src="../js/general.js" defer></script>
 </head>
 
 <body>
-    <h1>Gila & Tzivi store</h1>
-    <div id="auth-buttons">
-        <button id="logout-button" onclick="logoutUser()">Logout</button>
-        <button id="show-users-button" onclick="redirectToUsersPage()">Show All Users</button>
-    </div>
+    <header>
+        <div id="header-buttons">
+            <div id="left-buttons">
+                <button id="logout-button" onclick="logoutUser()">Logout</button>
+                <button id="edit-my-details-button" onclick="openEditUserModalByHimSelf()">Edit My Details</button>
+            </div>
+            <h1>Shoes Management</h1>
+            <div id="right-buttons">
+                <button id="show-users-button" onclick="redirectToUsersPage()">Go To Users</button>
+            </div>
+        </div>
+    </header>
     <div id="user-info">
         <h2>Welcome, <span id="user-name"></span>!</h2>
     </div>
 
-    <button id="add-item-button" onclick="openAddItemModal()">Add Item</button>
+    <button id="add-item-button" onclick="openAddItemModal()">Add Shoe</button>
 
-
-    <!-- חלון מוקפץ להוספת מוצר -->
+    <!-- חלון מוקפץ להוספת נעל -->
     <div id="addItemModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeAddItemModal()">&times;</span>
-            <h3>Add Item</h3>
+            <h3>Add Shoe</h3>
             <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-                <input type="text" id="add-name" placeholder="New shoe name" required>
-                <input type="number" id="add-size" placeholder="Size" required>
+                <input type="text" id="add-name" placeholder="Name" required>
+                <input type="number" id="add-size" placeholder="Size" required min="18" max="50">
                 <input type="text" id="add-color" placeholder="Color" required>
-                <input type="submit" value="Add Item">
+                <input type="text" id="add-userId" placeholder="User Id">
+                <input type="submit" value="Add Shoe">
             </form>
         </div>
     </div>
 
-    <!-- חלון מוקפץ לעריכת משתמש -->
+    <!-- חלון מוקפץ לעריכת נעל -->
     <div id="editItemModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeEditItemModal()">&times;</span>
-            <h3>Edit Item</h3>
+            <h3>Edit Shoe</h3>
             <form action="javascript:void(0);" onsubmit="updateItem()">
                 <input type="hidden" id="edit-id">
                 <input type="text" id="edit-name" placeholder="Shoe name" required>
-                <input type="number" id="edit-size" placeholder="Size" required>
+                <input type="number" id="edit-size" placeholder="Size" required min="18" max="50">
                 <input type="text" id="edit-color" placeholder="Color" required>
                 <input type="submit" value="Save Changes">
             </form>
         </div>
     </div>
-    <!-- <h3>Add Shoes</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="New shoe name">
-        <input type="number" id="add-size" placeholder="Size">
-        <input type="text" id="add-color" placeholder="Color">
-        <input type="submit" value="Add">
-    </form> -->
 
-    <!-- <div id="editForm">
-        <h3>Edit Shoes</h3>
-        <form action="javascript:void(0);" onsubmit="updateItem()">
-            <input type="hidden" id="edit-id">
-            <input type="text" id="edit-name" placeholder="Shoe name">
-            <input type="number" id="edit-size" placeholder="Size">
-            <input type="text" id="edit-color" placeholder="Color">
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-        </form>
-    </div> -->
-
-    <p id="counter"></p>
+    <!-- חלון מוקפץ לעריכת משתמש -->
+    <div id="editUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditUserModal()">&times;</span>
+            <h3>Edit User</h3>
+            <form action="javascript:void(0);" onsubmit="updateUser()">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-username" placeholder="Edit Username" required>
+                <input type="text" id="edit-password" placeholder="Edit Password">
+                <input type="email" id="edit-email" placeholder="Edit Email" required>
+                <input type="submit" value="Save Changes">
+            </form>
+        </div>
+    </div>
 
     <table>
         <tr>
@@ -84,7 +86,6 @@
         <tbody id="shoes"></tbody>
     </table>
 
-    <!-- <script src="js/item.js" asp-append-version="true"></script> -->
     <script type="text/javascript">
         getUserDetails();
         getItems();
