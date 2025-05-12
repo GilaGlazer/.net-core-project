@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,8 +10,8 @@ body, html {
   background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-/* Login Container */
-.login-container {
+/* Container */
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,25 +19,25 @@ body, html {
   width: 70%;
 }
 
-/* Login Card */
-.login-card {
-  width: 600px; 
-  max-width: 90%; 
-  padding: 20px; 
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
-  border-radius: 15px; 
+/* Card */
+.card {
+  width: 600px;
+  max-width: 90%;
+  padding: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
   background: #fff;
   text-align: center;
 }
 
-.login-card h2 {
-  margin-bottom: 15px; 
+.card h2 {
+  margin-bottom: 15px;
   color: #333;
 }
 
 /* Form Group */
 .form-group {
-  margin-bottom: 15px; /* Reduced spacing between form elements */
+  margin-bottom: 15px;
   text-align: left;
 }
 
@@ -57,22 +57,44 @@ body, html {
   font-size: 16px;
 }
 
-/* Primary Button */
-.btn-primary {
+/* Buttons */
+.btn {
   width: 100%;
-  padding: 12px 20px; /* Wider button with slightly larger padding */
+  padding: 12px 20px;
   margin-top: 10px;
-  background-color: #4c669f;
-  color: #fff;
   font-size: 16px;
   border: none;
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+.btn-primary {
+  background-color: #4c669f;
+  color: #fff;
+}
+
 .btn-primary:hover {
   background-color: #3b5998;
+}
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-google img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.btn-google:hover {
+  background-color: #f7f7f7;
 }
 
 /* Divider */
@@ -98,26 +120,38 @@ body, html {
   z-index: 0;
 }
 
-/* Google Button */
-.btn-google {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Password Wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
   width: 100%;
-  padding: 10px 15px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 66%;
+  right: 10px;
+  transform: translateY(-50%);
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-google img {
   width: 20px;
-  margin-right: 10px;
+  height: 20px;
 }
 
-.btn-google:hover {
-  background-color: #f7f7f7;
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  visibility: hidden;
+  height: 20px;
+  line-height: 20px;
+}
+
+.error-message.visible {
+  visibility: visible;
 }

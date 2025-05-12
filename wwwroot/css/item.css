@@ -19,7 +19,9 @@ button:hover,
 [aria-label]:hover {
     background-color: #45a049; /* צבע רקע כאשר מרחפים */
 }
-
+#show-users-button, #add-item-button {
+    display: none;
+}
 #editForm {
     display: none;
     margin-top: 20px; /* רווח מעל */

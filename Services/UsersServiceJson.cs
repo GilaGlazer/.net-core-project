@@ -67,8 +67,9 @@ public class UsersServiceJson : IService<Users>
     {
         try // Added
         {
-            Console.WriteLine("in Get");
-            return usersList ?? new List<Users>();
+            Console.WriteLine("in Get users");
+            Console.WriteLine(usersList.Count());
+            return usersList;
         }
         catch (Exception ex) // Added
         {
@@ -95,13 +96,13 @@ public class UsersServiceJson : IService<Users>
     {
         try // Added
         {
-        //     System.Console.WriteLine(usersList.FirstOrDefault(u => u.Id == id));
-        return usersList.FirstOrDefault(u => u.Id == id);
+            //     System.Console.WriteLine(usersList.FirstOrDefault(u => u.Id == id));
+            return usersList.FirstOrDefault(u => u.Id == id);
         }
         catch (Exception ex) // Added
         {
-        Console.WriteLine($"Error in Get by ID: {ex.Message}"); // Added
-             return null; // Added: החזר null במקרה של חריגה
+            Console.WriteLine($"Error in Get by ID: {ex.Message}"); // Added
+            return null; // Added: החזר null במקרה של חריגה
         }
     }
 
@@ -154,30 +155,31 @@ public class UsersServiceJson : IService<Users>
 
     public bool Delete(int id)
     {
-        System.Console.WriteLine("--------------------------in delete service------1");
+        Console.WriteLine("--------------------------in delete service------1");
         try // Added
         {
             var shoesService = shoesServiceFactory();
-                   System.Console.WriteLine("--------------------------in delete service-------2");
-                   System.Console.WriteLine(shoesService.Get().Count());
-
- // מחיקת כל הנעליים של המשתמש
+            Console.WriteLine("--------------------------in delete service-------2");
+            Console.WriteLine(shoesService.Get().Count());
+            if (activeUserService.UserId == id)
+                return false;
+            // מחיקת כל הנעליים של המשתמש
             List<Shoes> userShoes = shoesService.Get().Where(shoe => shoe.UserId == id).ToList();
-                    System.Console.WriteLine("--------------------------in delete service userShoes----------3");
-                   System.Console.WriteLine(userShoes.Count());
+            Console.WriteLine("--------------------------in delete service userShoes----------3");
+            Console.WriteLine(userShoes.Count());
 
             foreach (var shoe in userShoes)
             {
-               // shoesService.Delete(shoe.Id); // מחיקת כל נעל של המשתמש
-               Console.WriteLine($"Attempting to delete shoe with ID: {shoe.Id}");
-               System.Console.WriteLine("shoe id is"+shoe.Id);
-               System.Console.WriteLine("shoe user id is"+shoe.UserId);
-    if (!shoesService.Delete(shoe.Id)) // בדוק אם המחיקה מצליחה
-    {
-        Console.WriteLine($"Failed to delete shoe with ID: {shoe.Id}");
-        return false;
-    }
-    Console.WriteLine($"Deleted shoe with ID: {shoe.Id}");
+                // shoesService.Delete(shoe.Id); // מחיקת כל נעל של המשתמש
+                Console.WriteLine($"Attempting to delete shoe with ID: {shoe.Id}");
+                System.Console.WriteLine("shoe id is" + shoe.Id);
+                System.Console.WriteLine("shoe user id is" + shoe.UserId);
+                if (!shoesService.Delete(shoe.Id)) // בדוק אם המחיקה מצליחה
+                {
+                    Console.WriteLine($"Failed to delete shoe with ID: {shoe.Id}");
+                    return false;
+                }
+                Console.WriteLine($"Deleted shoe with ID: {shoe.Id}");
             }
 
             // מחיקת המשתמש
@@ -205,8 +207,8 @@ public class UsersServiceJson : IService<Users>
             //     return false;
 
             // return true;
-             if (newItem == null || string.IsNullOrWhiteSpace(newItem.Password)
-                 || string.IsNullOrWhiteSpace(newItem.UserName))
+            if (newItem == null || string.IsNullOrWhiteSpace(newItem.Password)
+                || string.IsNullOrWhiteSpace(newItem.UserName))
                 return false;
 
             return true;

@@ -6,7 +6,7 @@ const getUsers = async () => {
     try {
         const token = localStorage.getItem("authToken"); // קבלת הטוקן
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
 
@@ -21,7 +21,7 @@ const getUsers = async () => {
 
         if (!response.ok) {
             if (response.status === 403) {
-                alert("Access denied. Admin permissions required.");
+                console.log("Access denied. Admin permissions required.");
             } else {
                 throw new Error(`Unable to fetch users: ${response.statusText}`);
             }
@@ -51,7 +51,7 @@ const addUser = async () => {
     try {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
 
@@ -85,7 +85,7 @@ const deleteUser = async (id) => {
     try {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
 
@@ -111,7 +111,7 @@ const displayEditUserForm = (id) => {
     const user = users.find(user => user.id === id);
 
     if (!user) {
-        alert("User not found.");
+        console.log("User not found.");
         return;
     }
 
@@ -239,7 +239,7 @@ const openEditUserModal = (id) => {
     const user = users.find(user => user.id === id);
 
     if (!user) {
-        alert("User not found.");
+        console.log("User not found.");
         return;
     }
 
@@ -273,7 +273,7 @@ const updateUser = async () => {
     try {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
 
@@ -299,4 +299,6 @@ const updateUser = async () => {
 };
 
 
-
+const redirectToItemsPage=()=>{
+    window.location.href = "/html/item.html"; 
+}
