@@ -22,7 +22,7 @@ const handleFormSubmit = async (event) => {
 
         // טיפול במצב שבו המשתמש לא נמצא
         if (!response.ok) {
-            if (response.status === 401) {
+            if (response.status === 403) {
                 errorMessage.textContent = "User does not exist.";
                 errorMessage.classList.add("visible");
             } else {

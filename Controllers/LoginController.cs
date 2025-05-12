@@ -27,12 +27,11 @@ namespace webApiProject.Controllers
             if (string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Password))
                 return BadRequest("Email and Password are required.");
 
-            var existingUser = usersService
+            Users existingUser = usersService
                 .Get()
                 .FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
             if (existingUser == null)
-                return Unauthorized();
-
+                return NotFound("Invalid email or password.");
             var claims = new List<Claim> { new Claim("userId", existingUser.Id.ToString()) };
             if (user.Email != "g" || user.Password != "1")
                 claims.Add(new Claim("type", "user"));
