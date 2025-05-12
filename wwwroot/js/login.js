@@ -1,48 +1,74 @@
-document.getElementById("loginForm").addEventListener("submit", async (event) => {
-    event.preventDefault(); // Prevent form submission
 
+const handleFormSubmit = async (event) => {
+    event.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-
-    // Basic validation
+    const errorMessage = document.getElementById("error-message");
+    errorMessage.classList.remove("visible");
+    // בדיקה בסיסית אם השדות ריקים
     if (!email || !password) {
-        alert("User not found");
+        errorMessage.textContent = "Please fill in all fields.";
+        errorMessage.classList.add("visible");
         return;
     }
-
     try {
         const response = await fetch("/Login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ Email: email, Password: password }), // שים לב לשמות השדות
+            body: JSON.stringify({ Email: email, Password: password }),
         });
 
+        // טיפול במצב שבו המשתמש לא נמצא
         if (!response.ok) {
-            throw new Error("Login failed. Please check your credentials.");
+            if (response.status === 401) {
+                errorMessage.textContent = "User does not exist.";
+                errorMessage.classList.add("visible");
+            } else {
+                throw new Error("Login failed. Please check your credentials.");
+            }
+            return;
         }
 
-        const token = await response.text(); // Read the token from the response
+        // שמירת הטוקן ב-localStorage
+        const token = await response.text();
         console.log("Token:", token);
-
-        // Save the token to localStorage or sessionStorage
         localStorage.setItem("authToken", token);
 
-        // Redirect to another page if needed
         window.location.href = "/html/item.html";
     } catch (error) {
         console.log(error.message);
+        errorMessage.textContent = "An error occurred. Please try again.";
+        errorMessage.classList.add("visible");
     }
-});
-// Add toggle password visibility functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const passwordInput = document.getElementById('password');
-    const togglePassword = document.getElementById('togglePassword');
+};
 
-    togglePassword.addEventListener('click', () => {
+// פונקציה לטיפול בהצגת/הסתרת סיסמה
+const handleTogglePassword = () => {
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+    if (passwordInput && togglePassword) {
         const isPasswordVisible = passwordInput.type === 'text';
         passwordInput.type = isPasswordVisible ? 'password' : 'text';
         togglePassword.src = isPasswordVisible ? '../images/visible.png' : '../images/hide.png';
-    });
+    } else {
+        console.error("Password input or toggle button is missing in the DOM.");
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById("loginForm");
+    const togglePassword = document.getElementById("togglePassword");
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", handleFormSubmit);
+    } else {
+        console.error("Login form is missing in the DOM.");
+    }
+
+    if (togglePassword) {
+        togglePassword.addEventListener("click", handleTogglePassword);
+    }
 });

@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\images\\visible.png"
     },
     {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\general.js",
+      "PackagePath": "staticwebassets\\js\\general.js"
+    },
+    {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\item.js",
       "PackagePath": "staticwebassets\\js\\item.js"
     },

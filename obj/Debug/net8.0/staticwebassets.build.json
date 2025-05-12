@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hIHVNFDSYG42Q2L2xG1ffaRNXL+vB6mNUID6o5y5hDQ=",
+  "Hash": "53zybZO9LezzmDnEZpRIujk4f3yhgAvWkjKYnNCZ5Fg=",
   "Source": "myProjectCore",
   "BasePath": "_content/myProjectCore",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\visible.png"
+    },
+    {
+      "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\general.js",
+      "SourceId": "myProjectCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\",
+      "BasePath": "_content/myProjectCore",
+      "RelativePath": "js/general.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\general.js"
     },
     {
       "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\item.js",
