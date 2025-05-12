@@ -2,7 +2,7 @@ using webApiProject.Interfaces;
 
 namespace webApiProject.Models;
 
-public class Shoes:IIdentifiable
+public class Shoes : IIdentifiable
 {
     public int Id { get; set; }
 
@@ -12,5 +12,4 @@ public class Shoes:IIdentifiable
 
     public string? Color { get; set; }
     public int UserId { get; set; }
-
 }

@@ -28,11 +28,10 @@ public class UsersServiceJson : IService<Users>
             this.activeUserService = activeUserService;
             filePath = Path.Combine(env.ContentRootPath, "Data", fileName);
 
-            if (!File.Exists(filePath)) // Added
+            if (!File.Exists(filePath))
             {
-                Console.WriteLine($"File {filePath} does not exist. Creating a new empty list."); // Added
                 usersList = new List<Users>();
-                saveToFile(); // Added: יצירת קובץ ריק
+                saveToFile();
                 return;
             }
 
@@ -44,39 +43,36 @@ public class UsersServiceJson : IService<Users>
                         new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
                     ) ?? new List<Users>();
             }
-            Console.WriteLine("Users list initialized successfully."); // Added
         }
         catch (Exception ex) // Added
         {
-            Console.WriteLine($"Error initializing UsersServiceJson: {ex.Message}"); // Added
-            usersList = new List<Users>(); // Added: יצירת רשימה ריקה כברירת מחדל אם יש בעיה
+            Console.WriteLine($"Error initializing UsersServiceJson: {ex.Message}");
+            usersList = new List<Users>();
         }
     }
 
     private void saveToFile()
     {
-        try // Added
+        try
         {
             File.WriteAllText(filePath, JsonSerializer.Serialize(usersList));
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error saving to file: {ex.Message}"); // Added
-            throw; // Added: זרוק את החריגה במידת הצורך
+            Console.WriteLine($"Error saving to file: {ex.Message}");
+            throw;
         }
     }
 
     public List<Users> Get()
     {
-        try // Added
+        try
         {
-            Console.WriteLine("in Get");
             return usersList ?? new List<Users>();
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error in Get: {ex.Message}"); // Added
-            return new List<Users>(); // Added: החזר רשימה ריקה במקרה של חריגה
+            return new List<Users>();
         }
     }
 
@@ -84,61 +80,57 @@ public class UsersServiceJson : IService<Users>
 
     public Users GetMyUser()
     {
-        try // Added
+        try
         {
-            Console.WriteLine("in GetMyUser");
-            return usersList.FirstOrDefault(u => u.Id == activeUserService.UserId) ?? new Users(); // Updated
+            return usersList.FirstOrDefault(u => u.Id == activeUserService.UserId) ?? new Users();
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error in GetMyUser: {ex.Message}"); // Added
-            return null; // Added: החזר null במקרה של חריגה
+            Console.WriteLine($"Error in GetMyUser: {ex.Message}");
+            return null;
         }
     }
 
     public Users Get(int id)
     {
-        try // Added
+        try
         {
-            //     System.Console.WriteLine(usersList.FirstOrDefault(u => u.Id == id));
             return usersList.FirstOrDefault(u => u.Id == id);
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error in Get by ID: {ex.Message}"); // Added
-            return null; // Added: החזר null במקרה של חריגה
+            Console.WriteLine($"Error in Get by ID: {ex.Message}");
+            return null;
         }
     }
 
     public int Insert(Users newItem)
     {
-        try // Added
+        try
         {
             Console.WriteLine("in Insert");
             if (!CheckValueRequest(newItem))
                 return -1;
 
-            int lastId = usersList.Any() ? usersList.Max(s => s.Id) : 0; // Updated
+            int lastId = usersList.Any() ? usersList.Max(s => s.Id) : 0;
             newItem.Id = lastId + 1;
             usersList.Add(newItem);
             saveToFile();
             return newItem.Id;
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error in Insert: {ex.Message}"); // Added
-            return -1; // Added: החזר ערך ברירת מחדל במקרה של חריגה
+            Console.WriteLine($"Error in Insert: {ex.Message}");
+            return -1;
         }
     }
 
     public bool Update(int id, Users newItem)
     {
-        try // Added
+        try
         {
-            Console.WriteLine("in Update");
             if (!CheckValueRequest(newItem) || newItem.Id != id)
                 return false;
-            System.Console.WriteLine("///////////////////usser id in update servise " + id);
             var user = usersList.FirstOrDefault(u => u.Id == id);
             if (user == null)
                 return false;
@@ -149,8 +141,6 @@ public class UsersServiceJson : IService<Users>
             user.Type = newItem.Type;
             saveToFile();
 
-            System.Console.WriteLine("--------------------------in update service-------2");
-            System.Console.WriteLine(user.Id);
             return true;
         }
         catch (Exception ex) // Added
@@ -162,8 +152,7 @@ public class UsersServiceJson : IService<Users>
 
     public bool Delete(int id)
     {
-        Console.WriteLine("--------------------------in delete service------1");
-        try // Added
+        try
         {
             //אי אפשר למחוק את עצמו
             if (activeUserService.UserId == id)
@@ -172,28 +161,15 @@ public class UsersServiceJson : IService<Users>
             }
 
             var shoesService = shoesServiceFactory();
-            Console.WriteLine("--------------------------in delete service-------2");
-            Console.WriteLine(shoesService.Get().Count());
 
             // מחיקת כל הנעליים של המשתמש
             List<Shoes> userShoes = shoesService.Get().Where(shoe => shoe.UserId == id).ToList();
-            System.Console.WriteLine(
-                "--------------------------in delete service userShoes----------3"
-            );
-            System.Console.WriteLine(userShoes.Count());
-
             foreach (var shoe in userShoes)
             {
-                // shoesService.Delete(shoe.Id); // מחיקת כל נעל של המשתמש
-                Console.WriteLine($"Attempting to delete shoe with ID: {shoe.Id}");
-                System.Console.WriteLine("shoe id is" + shoe.Id);
-                System.Console.WriteLine("shoe user id is" + shoe.UserId);
-                if (!shoesService.Delete(shoe.Id)) // בדוק אם המחיקה מצליחה
+                if (!shoesService.Delete(shoe.Id))
                 {
-                    Console.WriteLine($"Failed to delete shoe with ID: {shoe.Id}");
                     return false;
                 }
-                Console.WriteLine($"Deleted shoe with ID: {shoe.Id}");
             }
 
             // מחיקת המשתמש
@@ -201,26 +177,21 @@ public class UsersServiceJson : IService<Users>
             if (item == null)
                 return false;
 
-            usersList.Remove(item); // מחיקת המשתמש מהרשימה
-            saveToFile(); // שמירת השינויים לקובץ
+            usersList.Remove(item);
+            saveToFile();
             return true;
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error in Delete: {ex.Message}"); // Added
-            return false; // Added: החזר false במקרה של חריגה
+            Console.WriteLine($"Error in Delete: {ex.Message}");
+            return false;
         }
     }
 
     private bool CheckValueRequest(Users newItem)
     {
-        try // Added
+        try
         {
-            // if (newItem == null || string.IsNullOrWhiteSpace(newItem.Password)
-            //     || !IsValidEmail(newItem.Email) || string.IsNullOrWhiteSpace(newItem.UserName))
-            //     return false;
-
-            // return true;
             if (
                 newItem == null
                 || string.IsNullOrWhiteSpace(newItem.Password)
@@ -230,16 +201,16 @@ public class UsersServiceJson : IService<Users>
 
             return true;
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error in CheckValueRequest: {ex.Message}"); // Added
-            return false; // Added: החזר false במקרה של חריגה
+            Console.WriteLine($"Error in CheckValueRequest: {ex.Message}");
+            return false;
         }
     }
 
     private bool IsValidEmail(string email)
     {
-        try // Added
+        try
         {
             if (string.IsNullOrEmpty(email))
                 return false;
@@ -250,8 +221,8 @@ public class UsersServiceJson : IService<Users>
         }
         catch (Exception ex) // Added
         {
-            Console.WriteLine($"Error in IsValidEmail: {ex.Message}"); // Added
-            return false; // Added: החזר false במקרה של חריגה
+            Console.WriteLine($"Error in IsValidEmail: {ex.Message}");
+            return false;
         }
     }
 }

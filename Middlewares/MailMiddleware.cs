@@ -8,6 +8,7 @@ public class MailMiddleware
 {
     private readonly RequestDelegate next;
     private static bool isMailSent = false;
+
     public MailMiddleware(RequestDelegate next)
     {
         this.next = next;
@@ -17,10 +18,10 @@ public class MailMiddleware
     {
         try
         {
-            if (!isMailSent) 
+            if (!isMailSent)
             {
                 SendMail(new Exception("try to send mail"));
-                isMailSent = true; 
+                isMailSent = true;
             }
 
             await next(c);
@@ -30,25 +31,18 @@ public class MailMiddleware
             Debug.WriteLine($"Error sending mail: {ex.Message}");
             Console.WriteLine($"Error sending mail: {ex.Message}");
         }
-
-
     }
 
     private void SendMail(Exception ex)
     {
-        // var fromAddress = new MailAddress("r0583246798@gmail.com", "my brother");
-        // var toAddress = new MailAddress("g0583247266@gmail.com", "gila");
-        // const string fromPassword = "pxri qwzo dxhn jkxk";
-        // const string subject = "hiii";
-        // const string body = "whathap?";
-
         var fromAddress = new MailAddress("r0583246798@gmail.com", "Error Notifier");
         var toAddress = new MailAddress("g0583247266@gmail.com", "admin");
-        const string fromPassword = "pxri qwzo dxhn jkxk"; 
+        const string fromPassword = "pxri qwzo dxhn jkxk";
         string subject = "Application Error Notification";
-        string body = $"An error occurred in the application:\n\n" +
-                      $"Message: {ex.Message}\n" +
-                      $"Time: {DateTime.Now}";
+        string body =
+            $"An error occurred in the application:\n\n"
+            + $"Message: {ex.Message}\n"
+            + $"Time: {DateTime.Now}";
 
         var smtp = new SmtpClient
         {
@@ -57,13 +51,13 @@ public class MailMiddleware
             EnableSsl = true,
             DeliveryMethod = SmtpDeliveryMethod.Network,
             UseDefaultCredentials = false,
-            Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
         };
 
         using var message = new MailMessage(fromAddress, toAddress)
         {
             Subject = subject,
-            Body = body
+            Body = body,
         };
         smtp.Send(message);
     }

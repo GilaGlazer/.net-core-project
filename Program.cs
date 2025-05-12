@@ -1,12 +1,27 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using Scalar.AspNetCore;
+using Serilog;
 using webApiProject.Interfaces;
 using webApiProject.Middlewares;
 using webApiProject.Models;
 using webApiProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File(
+        "logs/.log",
+        rollingInterval: RollingInterval.Day,
+        fileSizeLimitBytes: 100_000_000,
+        retainedFileCountLimit: 30
+    )
+    .CreateLogger();
+
+builder.Host.UseSerilog(); // שימוש בסרילוג כמנוע הלוגים
+
 
 builder
     .Services.AddAuthentication(options =>
@@ -57,8 +72,6 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddActiveUserService();
 builder.Services.AddUserService();
-// builder.Services.AddScoped<ActiveUserService>(); // Register ActiveUserService as Scoped
-// builder.Services.AddScoped<UsersServiceJson>(); // Added: Register UsersServiceJson explicitly
 builder.Services.AddScoped<IService<Users>, UsersServiceJson>(); // רישום השירות `UsersServiceJson`
 builder.Services.AddScoped<IService<Shoes>, ItemServiceJson<Shoes>>(); // רישום השירות `ItemServiceJson<Shoes>`
 
@@ -72,7 +85,6 @@ builder.Services.AddScoped<Func<IService<Shoes>>>(sp =>
 
 builder.Services.AddControllers();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

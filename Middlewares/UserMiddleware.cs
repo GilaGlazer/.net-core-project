@@ -1,7 +1,8 @@
-using Microsoft.AspNetCore.Http;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using webApiProject.Services;
+
 namespace webApiProject.Middlewares
 {
     public class UserMiddleware
@@ -20,8 +21,11 @@ namespace webApiProject.Middlewares
                 activeUser.UserId = int.TryParse(
                     context.User.Claims.FirstOrDefault(c => c.Type == "userId")?.Value,
                     out var userId
-                ) ? userId : -1;
-                activeUser.Type = context.User.Claims.FirstOrDefault(c => c.Type == "type")?.Value ?? "user";
+                )
+                    ? userId
+                    : -1;
+                activeUser.Type =
+                    context.User.Claims.FirstOrDefault(c => c.Type == "type")?.Value ?? "user";
             }
 
             await _next(context);

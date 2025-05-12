@@ -4,13 +4,38 @@ const userUri = '/users';
 let userDetails = {};
 
 // פונקציה לקבלת טוקן
+// const getToken = () => {
+//   const token = localStorage.getItem("authToken");
+//   if (!token) {
+//     return null;
+//   }
+//   return token;
+// };
+
 const getToken = () => {
   const token = localStorage.getItem("authToken");
-  if (!token) {
+  if (!token) return null;
+
+  try {
+    const payloadBase64 = token.split('.')[1];
+    const payloadJson = atob(payloadBase64);
+    const payload = JSON.parse(payloadJson);
+
+    const currentTime = Math.floor(Date.now() / 1000); // שניות מאז 1970
+    if (payload.exp && payload.exp > currentTime) {
+      return token;
+    } else {
+      // התוקף פג – מחק מהאחסון
+      localStorage.removeItem("authToken");
+      return null;
+    }
+  } catch (e) {
+    // טוקן לא תקין – מחק אותו
+    localStorage.removeItem("authToken");
     return null;
   }
-  return token;
 };
+
 
 // פונקציה לבדוק אם יש טוקן ולנווט
 const checkTokenAndRedirect = () => {
@@ -25,7 +50,7 @@ const checkTokenAndRedirect = () => {
 
 // קריאה לפונקציה בעת טעינת הדף
 window.addEventListener("load", checkTokenAndRedirect);
-const currentUserDetailsFromToken=()=>{
+const currentUserDetailsFromToken = () => {
   let token = getToken();
   if (token) {
     let payload = token.split('.')[1];
@@ -33,24 +58,24 @@ const currentUserDetailsFromToken=()=>{
     let userType = decoded.type;
     let userId = decoded.userId;
 
-    return {userType, userId};
+    return { userType, userId };
 
   }
   return null;
 }
 window.onload = () => {
-  let {userType} = currentUserDetailsFromToken();
-    if (userType === "admin") {
-      document.getElementById('show-users-button').style.display = 'inline-block';
-    }
-  
+  let { userType } = currentUserDetailsFromToken();
+  if (userType === "admin") {
+    document.getElementById('show-users-button').style.display = 'inline-block';
+  }
+
 };
 
 
 // פונקציה לקבלת פריטים
 const getItems = async () => {
   const token = getToken();
-  if (!token) 
+  if (!token)
     return;
   try {
     const response = await fetch(uri, {
@@ -70,7 +95,7 @@ const getItems = async () => {
 const addItem = async () => {
   const token = getToken();
   if (!token)
-     return;
+    return;
 
   const addNameTextbox = document.getElementById('add-name');
   const addSizeTextbox = document.getElementById('add-size');
@@ -82,10 +107,10 @@ const addItem = async () => {
     color: addColorTextbox.value.trim(),
     userId: userDetails.id,
   };
-  let{userType} = currentUserDetailsFromToken();
-  if(userType === "admin"){
-     addUserIdTextbox = document.getElementById('add-userId');
-      item.userId = parseInt(addUserIdTextbox.value, 10);
+  let { userType } = currentUserDetailsFromToken();
+  if (userType === "admin") {
+    addUserIdTextbox = document.getElementById('add-userId');
+    item.userId = parseInt(addUserIdTextbox.value, 10);
   }
 
   try {
@@ -103,7 +128,7 @@ const addItem = async () => {
     addNameTextbox.value = '';
     addSizeTextbox.value = '';
     addColorTextbox.value = '';
-    if(userType === "admin"){
+    if (userType === "admin") {
       addUserIdTextbox.value = '';
     }
 
@@ -146,7 +171,6 @@ const deleteItem = async (id) => {
 const updateItem = async () => {
   const token = getToken();
   if (!token) return;
-
   const itemId = document.getElementById('edit-id').value;
   const item = {
     id: parseInt(itemId, 10),
@@ -290,9 +314,9 @@ const redirectToUsersPage = () => {
 
 
 const openAddItemModal = () => {
-  let{userType} = currentUserDetailsFromToken();
-  if(userType === "admin"){
-     document.getElementById('add-userId').style.display = 'inline-block';
+  let { userType } = currentUserDetailsFromToken();
+  if (userType === "admin") {
+    document.getElementById('add-userId').style.display = 'inline-block';
   }
   document.getElementById('addItemModal').style.display = 'block';
 
@@ -355,7 +379,7 @@ const updateUser = async () => {
   //   let decoded = JSON.parse(atob(payload)); // מפענח מ־Base64 וממיר ל־object
   //   userIdFromToken = decoded.userId;
   // }
-  let{userId} = currentUserDetailsFromToken();
+  let { userId } = currentUserDetailsFromToken();
   const user = {
     id: userId,
     userName: document.getElementById('edit-username').value.trim(),

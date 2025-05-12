@@ -18,7 +18,6 @@ namespace webApiProject.Controllers
         }
 
         [HttpPost]
-        // [Route("[action]")]
         [Route("")]
         public ActionResult<String> Login([FromBody] LoginRequest user)
         {
@@ -40,21 +39,5 @@ namespace webApiProject.Controllers
             var token = AuthTokenService.GetToken(claims);
             return new OkObjectResult(AuthTokenService.WriteToken(token));
         }
-
-        // [HttpPost]
-        // [Route("[action]")]
-        // [Authorize(Policy = "admin")]
-        // public IActionResult GenerateBadge([FromBody] Agent Agent)
-        // {
-        //     var claims = new List<Claim>
-        //     {
-        //         new Claim("type", "Agent"),
-        //         new Claim("ClearanceLevel", Agent.ClearanceLevel.ToString()),
-        //     };
-
-        //     var token = AuthTokenService.GetToken(claims);
-
-        //     return new OkObjectResult(AuthTokenService.WriteToken(token));
-        // }
     }
 }

@@ -1,4 +1,3 @@
-
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -8,11 +7,11 @@ namespace webApiProject.Services
 {
     public static class AuthTokenService
     {
-        private static SymmetricSecurityKey key
-            = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(
-                    "SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
+        private static SymmetricSecurityKey key = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ")
+        );
         private static string issuer = "https://shoes.com";
+
         public static SecurityToken GetToken(List<Claim> claims) =>
             new JwtSecurityToken(
                 issuer,
@@ -22,14 +21,13 @@ namespace webApiProject.Services
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
             );
 
-        public static TokenValidationParameters
-            GetTokenValidationParameters() =>
+        public static TokenValidationParameters GetTokenValidationParameters() =>
             new TokenValidationParameters
             {
                 ValidIssuer = issuer,
                 ValidAudience = issuer,
                 IssuerSigningKey = key,
-                ClockSkew = TimeSpan.Zero // remove delay of token when expire
+                ClockSkew = TimeSpan.Zero,
             };
 
         public static string WriteToken(SecurityToken token) =>
@@ -40,11 +38,10 @@ namespace webApiProject.Services
             var handler = new JwtSecurityTokenHandler();
             var jwtToken = handler.ReadJwtToken(token);
 
-            // חיפוש Claim עם שם "userId" או כל Claim אחר שמכיל את ה-ID של המשתמש
             var userIdClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == "userId");
-            if(!int.TryParse(userIdClaim?.Value,out int id))
+            if (!int.TryParse(userIdClaim?.Value, out int id))
                 return int.Parse(userIdClaim?.Value);
-            return -1; // מחזיר את ה-ID כ-String או null אם לא נמצא
+            return -1;
         }
     }
 }

@@ -1,16 +1,13 @@
-using Microsoft.AspNetCore.Mvc;
-using webApiProject.Models;
-using webApiProject.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using webApiProject.Services;
-using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
+using webApiProject.Interfaces;
+using webApiProject.Models;
 
 namespace webApiProject.Controllers;
 
 [ApiController]
 [Route("[controller]")]
 [Authorize(Policy = "user")]
-
 public class ShoesController : ControllerBase
 {
     private readonly IService<Shoes> shoesService;
