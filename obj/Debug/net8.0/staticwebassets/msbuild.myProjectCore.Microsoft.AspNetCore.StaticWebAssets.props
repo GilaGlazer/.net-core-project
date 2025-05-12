@@ -28,6 +28,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
+<<<<<<< HEAD
+      <Fingerprint>9zd0d83w43</Fingerprint>
+      <Integrity>xcO34qGILMs4BKZYvXnZWAf9IhkvNoTfIPhEQnv1MOs=</Integrity>
+=======
+>>>>>>> b3bca41c2f7a35a320bd0a44779a650690ebfdde
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\css\login.css))</OriginalItemSpec>
@@ -76,6 +81,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
+<<<<<<< HEAD
+      <Fingerprint>664vmq30bp</Fingerprint>
+      <Integrity>IiuVzJw+ZUvdVI0EjEs7b9VnZZFlaTllWRN4IItjbhQ=</Integrity>
+=======
+>>>>>>> b3bca41c2f7a35a320bd0a44779a650690ebfdde
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\html\login.html))</OriginalItemSpec>
@@ -204,6 +214,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
+<<<<<<< HEAD
+      <Fingerprint>ojk3vy0d94</Fingerprint>
+      <Integrity>PO5GXLUv5VC3dsoEZRtwGpHjYrY3tL0qU9pwQxpcf/M=</Integrity>
+=======
+>>>>>>> b3bca41c2f7a35a320bd0a44779a650690ebfdde
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\login.js))</OriginalItemSpec>

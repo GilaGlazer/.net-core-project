@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\general.css",
+      "PackagePath": "staticwebassets\\css\\general.css"
+    },
+    {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\item.css",
       "PackagePath": "staticwebassets\\css\\item.css"
     },
@@ -43,10 +47,6 @@
     {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\item.js",
       "PackagePath": "staticwebassets\\js\\item.js"
-    },
-    {
-      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\jeneral.js",
-      "PackagePath": "staticwebassets\\js\\jeneral.js"
     },
     {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\login.js",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "53zybZO9LezzmDnEZpRIujk4f3yhgAvWkjKYnNCZ5Fg=",
+  "Hash": "gqV7cAZJQdlU0pXN/q0wXBbaN9pSHsnhL6JIkEJ3QZw=",
   "Source": "myProjectCore",
   "BasePath": "_content/myProjectCore",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\general.css",
+      "SourceId": "myProjectCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\",
+      "BasePath": "_content/myProjectCore",
+      "RelativePath": "css/general.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\general.css"
+    },
     {
       "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\css\\item.css",
       "SourceId": "myProjectCore",
@@ -224,25 +243,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\item.js"
-    },
-    {
-      "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\jeneral.js",
-      "SourceId": "myProjectCore",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\",
-      "BasePath": "_content/myProjectCore",
-      "RelativePath": "js/jeneral.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\jeneral.js"
     },
     {
       "Identity": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\login.js",

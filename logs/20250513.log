@@ -1,0 +1,766 @@
+2025-05-13 01:12:12.876 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-05-13 01:12:12.990 +03:00 [DBG] Hosting starting
+2025-05-13 01:12:13.008 +03:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-13 01:12:13.025 +03:00 [DBG] Reading data from file 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys\key-9f88ca70-09f0-4af8-8640-aa442d6731f6.xml'.
+2025-05-13 01:12:13.038 +03:00 [DBG] Found key {9f88ca70-09f0-4af8-8640-aa442d6731f6}.
+2025-05-13 01:12:13.049 +03:00 [DBG] Considering key {9f88ca70-09f0-4af8-8640-aa442d6731f6} with expiration date 2025-07-27 19:26:58Z as default key.
+2025-05-13 01:12:13.057 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-05-13 01:12:13.061 +03:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-05-13 01:12:13.064 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-05-13 01:12:13.072 +03:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-05-13 01:12:13.077 +03:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-05-13 01:12:13.082 +03:00 [DBG] Using key {9f88ca70-09f0-4af8-8640-aa442d6731f6} as the default key.
+2025-05-13 01:12:13.085 +03:00 [DBG] Key ring with default key {9f88ca70-09f0-4af8-8640-aa442d6731f6} was loaded during application startup.
+2025-05-13 01:12:13.166 +03:00 [INF] Now listening on: https://localhost:7263
+2025-05-13 01:12:13.169 +03:00 [INF] Now listening on: http://localhost:5169
+2025-05-13 01:12:13.170 +03:00 [DBG] Loaded hosting startup assembly myProjectCore
+2025-05-13 01:12:13.171 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-13 01:12:13.173 +03:00 [INF] Hosting environment: Development
+2025-05-13 01:12:13.176 +03:00 [INF] Content root path: C:\תיכנות\יד\זילברברג\myProjectCore
+2025-05-13 01:12:13.177 +03:00 [DBG] Hosting started
+2025-05-13 01:12:17.688 +03:00 [DBG] Connection id "0HNCHK87E39O3" accepted.
+2025-05-13 01:12:17.696 +03:00 [DBG] Connection id "0HNCHK87E39O3" started.
+2025-05-13 01:12:17.757 +03:00 [DBG] Connection 0HNCHK87E39O3 established using the following protocol: "Tls13"
+2025-05-13 01:12:17.805 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/ - null null
+2025-05-13 01:12:17.808 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-05-13 01:12:17.821 +03:00 [DBG] No candidates found for the request path '/'
+2025-05-13 01:12:17.826 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:17.843 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:17.916 +03:00 [INF] Sending file. Request path: '//html/item.html'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\html\item.html'
+2025-05-13 01:12:17.923 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263//html/item.html - 200 3683 text/html 118.8763ms
+2025-05-13 01:12:17.949 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/css/general.css - null null
+2025-05-13 01:12:17.949 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/css/item.css - null null
+2025-05-13 01:12:17.957 +03:00 [DBG] No candidates found for the request path '/css/general.css'
+2025-05-13 01:12:17.960 +03:00 [DBG] No candidates found for the request path '/css/item.css'
+2025-05-13 01:12:17.961 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:17.963 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:17.965 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:17.965 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:17.989 +03:00 [INF] Sending file. Request path: '/css/item.css'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\css\item.css'
+2025-05-13 01:12:17.995 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/css/item.css - 200 161 text/css 45.4534ms
+2025-05-13 01:12:17.996 +03:00 [INF] Sending file. Request path: '/css/general.css'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\css\general.css'
+2025-05-13 01:12:18.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/js/general.js - null null
+2025-05-13 01:12:18.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/js/item.js - null null
+2025-05-13 01:12:18.010 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/css/general.css - 200 3855 text/css 60.9241ms
+2025-05-13 01:12:18.021 +03:00 [DBG] No candidates found for the request path '/js/general.js'
+2025-05-13 01:12:18.027 +03:00 [DBG] No candidates found for the request path '/js/item.js'
+2025-05-13 01:12:18.031 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:18.032 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:18.033 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:18.034 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:18.068 +03:00 [INF] Sending file. Request path: '/js/general.js'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\js\general.js'
+2025-05-13 01:12:18.073 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/js/general.js - 200 408 text/javascript 71.5653ms
+2025-05-13 01:12:18.098 +03:00 [INF] Sending file. Request path: '/js/item.js'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\js\item.js'
+2025-05-13 01:12:18.100 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/js/item.js - 200 10524 text/javascript 98.2106ms
+2025-05-13 01:12:18.132 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/html/item.html - null null
+2025-05-13 01:12:18.132 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/shoes - null null
+2025-05-13 01:12:18.133 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/users/2 - null null
+2025-05-13 01:12:18.140 +03:00 [DBG] No candidates found for the request path '/html/item.html'
+2025-05-13 01:12:18.149 +03:00 [DBG] 1 candidate(s) found for the request path '/shoes'
+2025-05-13 01:12:18.150 +03:00 [DBG] 1 candidate(s) found for the request path '/users/2'
+2025-05-13 01:12:18.152 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:18.155 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:18.156 +03:00 [DBG] Endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)' with route pattern 'Shoes' is valid for the request path '/shoes'
+2025-05-13 01:12:18.156 +03:00 [DBG] Endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)' with route pattern 'Users/{id}' is valid for the request path '/users/2'
+2025-05-13 01:12:18.157 +03:00 [INF] Sending file. Request path: '/html/item.html'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\html\item.html'
+2025-05-13 01:12:18.162 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:12:18.166 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:12:18.170 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/html/item.html - 200 3683 text/html 37.0972ms
+2025-05-13 01:12:18.173 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.175 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.190 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.194 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.218 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/shoes - null null
+2025-05-13 01:12:18.218 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/users/2 - null null
+2025-05-13 01:12:18.228 +03:00 [DBG] 1 candidate(s) found for the request path '/shoes'
+2025-05-13 01:12:18.237 +03:00 [DBG] 1 candidate(s) found for the request path '/users/2'
+2025-05-13 01:12:18.241 +03:00 [DBG] Endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)' with route pattern 'Shoes' is valid for the request path '/shoes'
+2025-05-13 01:12:18.246 +03:00 [DBG] Endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)' with route pattern 'Users/{id}' is valid for the request path '/users/2'
+2025-05-13 01:12:18.251 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:12:18.256 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:12:18.259 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.261 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.264 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.266 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:12:18.345 +03:00 [INF] Successfully validated the token.
+2025-05-13 01:12:18.345 +03:00 [INF] Successfully validated the token.
+2025-05-13 01:12:18.345 +03:00 [INF] Successfully validated the token.
+2025-05-13 01:12:18.345 +03:00 [INF] Successfully validated the token.
+2025-05-13 01:12:18.348 +03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-05-13 01:12:18.349 +03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-05-13 01:12:18.349 +03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-05-13 01:12:18.351 +03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-05-13 01:12:18.358 +03:00 [DBG] Authorization was successful.
+2025-05-13 01:12:18.358 +03:00 [DBG] Authorization was successful.
+2025-05-13 01:12:18.358 +03:00 [DBG] Authorization was successful.
+2025-05-13 01:12:18.358 +03:00 [DBG] Authorization was successful.
+2025-05-13 01:12:18.360 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:12:18.361 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:12:18.361 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:12:18.362 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:12:18.380 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[webApiProject.Models.Users] Get(Int32) on controller webApiProject.Controllers.UsersController (myProjectCore).
+2025-05-13 01:12:18.380 +03:00 [INF] Route matched with {action = "Get", controller = "Shoes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[webApiProject.Models.Shoes]] Get() on controller webApiProject.Controllers.ShoesController (myProjectCore).
+2025-05-13 01:12:18.380 +03:00 [INF] Route matched with {action = "Get", controller = "Shoes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[webApiProject.Models.Shoes]] Get() on controller webApiProject.Controllers.ShoesController (myProjectCore).
+2025-05-13 01:12:18.380 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[webApiProject.Models.Users] Get(Int32) on controller webApiProject.Controllers.UsersController (myProjectCore).
+2025-05-13 01:12:18.383 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:12:18.384 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:12:18.386 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:12:18.388 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:12:18.390 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:12:18.391 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:12:18.392 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:12:18.394 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:12:18.396 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:12:18.397 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:12:18.398 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:12:18.399 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:12:18.402 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:12:18.404 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:12:18.405 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:12:18.406 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:12:18.408 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:12:18.410 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:12:18.411 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:12:18.413 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:12:18.416 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.ShoesController (myProjectCore)
+2025-05-13 01:12:18.416 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:12:18.417 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.ShoesController (myProjectCore)
+2025-05-13 01:12:18.419 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:12:18.437 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.ShoesController (myProjectCore)
+2025-05-13 01:12:18.437 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.ShoesController (myProjectCore)
+2025-05-13 01:12:18.439 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:12:18.439 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:12:18.441 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:12:18.441 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:12:18.448 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2025-05-13 01:12:18.448 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2025-05-13 01:12:18.449 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:12:18.450 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:12:18.454 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2025-05-13 01:12:18.454 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2025-05-13 01:12:18.455 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:12:18.455 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:12:18.457 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-05-13 01:12:18.457 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-05-13 01:12:18.458 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:12:18.460 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:12:18.461 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-05-13 01:12:18.463 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-05-13 01:12:18.464 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-05-13 01:12:18.465 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-05-13 01:12:18.467 +03:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2025-05-13 01:12:18.468 +03:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2025-05-13 01:12:18.471 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApiProject.Models.Shoes, myProjectCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-13 01:12:18.472 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApiProject.Models.Shoes, myProjectCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-13 01:12:18.474 +03:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2025-05-13 01:12:18.474 +03:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2025-05-13 01:12:18.480 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:12:18.481 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:12:18.484 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:12:18.487 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:12:18.488 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:12:18.488 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:12:18.489 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:12:18.490 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:12:18.491 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-05-13 01:12:18.492 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-05-13 01:12:18.493 +03:00 [INF] Executing ObjectResult, writing value of type 'webApiProject.Models.Users'.
+2025-05-13 01:12:18.495 +03:00 [INF] Executing ObjectResult, writing value of type 'webApiProject.Models.Users'.
+2025-05-13 01:12:18.498 +03:00 [INF] Executed action webApiProject.Controllers.ShoesController.Get (myProjectCore) in 78.4454ms
+2025-05-13 01:12:18.498 +03:00 [INF] Executed action webApiProject.Controllers.ShoesController.Get (myProjectCore) in 82.145ms
+2025-05-13 01:12:18.499 +03:00 [INF] Executed action webApiProject.Controllers.UsersController.Get (myProjectCore) in 80.237ms
+2025-05-13 01:12:18.499 +03:00 [INF] Executed action webApiProject.Controllers.UsersController.Get (myProjectCore) in 84.5991ms
+2025-05-13 01:12:18.500 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:12:18.502 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:12:18.503 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:12:18.504 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:12:18.504 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/shoes - 499 null application/json; charset=utf-8 371.9252ms
+2025-05-13 01:12:18.506 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/users/2 - 200 null application/json; charset=utf-8 287.6605ms
+2025-05-13 01:12:18.506 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/shoes - 200 null application/json; charset=utf-8 287.7746ms
+2025-05-13 01:12:18.507 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/users/2 - 499 null application/json; charset=utf-8 373.6352ms
+2025-05-13 01:12:28.079 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-05-13 01:12:28.088 +03:00 [DBG] No candidates found for the request path '/.well-known/appspecific/com.chrome.devtools.json'
+2025-05-13 01:12:28.091 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:28.097 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:28.104 +03:00 [DBG] The request path /.well-known/appspecific/com.chrome.devtools.json does not match an existing file
+2025-05-13 01:12:28.110 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:12:28.119 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 40.2938ms
+2025-05-13 01:12:28.137 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7263/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-05-13 01:12:40.746 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/html/login.html - null null
+2025-05-13 01:12:40.751 +03:00 [DBG] No candidates found for the request path '/html/login.html'
+2025-05-13 01:12:40.756 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:40.765 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:40.824 +03:00 [INF] Sending file. Request path: '/html/login.html'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\html\login.html'
+2025-05-13 01:12:40.832 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/html/login.html - 200 1511 text/html 85.5196ms
+2025-05-13 01:12:40.885 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/css/login.css - null null
+2025-05-13 01:12:40.889 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/js/login.js - null null
+2025-05-13 01:12:40.892 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/images/visible.png - null null
+2025-05-13 01:12:40.900 +03:00 [DBG] No candidates found for the request path '/css/login.css'
+2025-05-13 01:12:40.910 +03:00 [DBG] No candidates found for the request path '/js/login.js'
+2025-05-13 01:12:40.926 +03:00 [DBG] No candidates found for the request path '/images/visible.png'
+2025-05-13 01:12:40.934 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:40.941 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:40.947 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:12:40.950 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:40.954 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:40.957 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:12:40.969 +03:00 [INF] The file /js/login.js was not modified
+2025-05-13 01:12:40.975 +03:00 [INF] The file /images/visible.png was not modified
+2025-05-13 01:12:40.981 +03:00 [DBG] Handled. Status code: 304 File: /js/login.js
+2025-05-13 01:12:40.986 +03:00 [DBG] Handled. Status code: 304 File: /images/visible.png
+2025-05-13 01:12:40.993 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/js/login.js - 304 null text/javascript 103.981ms
+2025-05-13 01:12:41.001 +03:00 [INF] Sending file. Request path: '/css/login.css'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\css\login.css'
+2025-05-13 01:12:41.001 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/images/visible.png - 304 null image/png 108.9417ms
+2025-05-13 01:12:41.022 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/css/login.css - 200 2204 text/css 137.2017ms
+2025-05-13 01:13:02.913 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:02.925 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:02.928 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:02.935 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:02.939 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:02.942 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:02.947 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:02.951 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:02.967 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:02.976 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:02.983 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:02.992 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:03.018 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:03.027 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:03.036 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:03.046 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:03.057 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:03.067 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:03.078 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:03.122 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000001F": started reading request body.
+2025-05-13 01:13:03.125 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000001F": done reading request body.
+2025-05-13 01:13:03.133 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:03.142 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:03.155 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:03.164 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:03.195 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:03.204 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:03.213 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:03.223 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:03.232 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:03.242 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:03.252 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:03.263 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 227.4284ms
+2025-05-13 01:13:03.276 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:03.287 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 374.0307ms
+2025-05-13 01:13:06.089 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:06.102 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:06.106 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:06.109 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:06.116 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:06.119 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:06.122 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:06.133 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:06.139 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:06.161 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:06.169 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:06.189 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:06.217 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:06.222 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:06.226 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:06.238 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:06.243 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:06.247 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:06.264 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:06.273 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000021": started reading request body.
+2025-05-13 01:13:06.284 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000021": done reading request body.
+2025-05-13 01:13:06.291 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:06.299 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:06.310 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:06.317 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:06.325 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:06.332 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:06.352 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:06.359 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:06.364 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:06.369 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:06.371 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:06.384 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 157.5148ms
+2025-05-13 01:13:06.391 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:06.400 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 311.4254ms
+2025-05-13 01:13:06.935 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:06.942 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:06.946 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:06.949 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:06.952 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:06.955 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:06.958 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:06.960 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:06.966 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:06.975 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:06.980 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:06.986 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:06.994 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:07.004 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:07.017 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.033 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.043 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.051 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:07.060 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:07.067 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000023": started reading request body.
+2025-05-13 01:13:07.075 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000023": done reading request body.
+2025-05-13 01:13:07.082 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:07.085 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.090 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.098 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.107 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.114 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:07.125 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:07.137 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:07.144 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:07.150 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:07.154 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:07.161 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.164 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:07.169 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:07.173 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:07.179 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:07.182 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:07.186 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:07.194 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 177.7604ms
+2025-05-13 01:13:07.197 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.203 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.210 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:07.217 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 281.4943ms
+2025-05-13 01:13:07.226 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:07.243 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:07.252 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:07.260 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:07.264 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:07.273 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.284 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.289 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:07.292 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.306 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:07.312 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:07.317 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:07.324 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:07.333 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.340 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000025": started reading request body.
+2025-05-13 01:13:07.344 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:07.348 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000025": done reading request body.
+2025-05-13 01:13:07.351 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:07.356 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:07.360 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:07.365 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.371 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.377 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.381 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:07.386 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.395 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:07.405 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:07.399 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.414 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:07.418 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:07.425 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:07.434 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:07.439 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:07.443 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:07.448 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.451 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:07.459 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.461 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:07.469 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.475 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:07.483 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:07.484 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:07.490 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 217.8052ms
+2025-05-13 01:13:07.495 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:07.509 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:07.517 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.524 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000027": started reading request body.
+2025-05-13 01:13:07.531 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:07.536 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 421.5625ms
+2025-05-13 01:13:07.541 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000027": done reading request body.
+2025-05-13 01:13:07.548 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.569 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:07.574 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:07.581 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.583 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:07.589 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.594 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:07.600 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.606 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.611 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.614 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:07.624 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:07.630 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:07.644 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:07.655 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:07.660 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:07.671 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:07.675 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:07.687 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:07.693 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:07.702 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:07.711 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:07.720 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.729 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 281.3165ms
+2025-05-13 01:13:07.737 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:07.742 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.750 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.756 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 466.3368ms
+2025-05-13 01:13:07.763 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:07.787 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:07.794 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000029": started reading request body.
+2025-05-13 01:13:07.804 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:00000029": done reading request body.
+2025-05-13 01:13:07.811 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:07.817 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.824 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.832 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:07.839 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:07.847 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:07.858 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:07.861 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:07.865 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:07.870 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:07.875 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:07.880 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 160.2056ms
+2025-05-13 01:13:07.886 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:07.891 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 407.016ms
+2025-05-13 01:13:25.698 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:25.699 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:25.700 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:25.701 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:25.701 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:25.704 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:25.705 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:25.706 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:25.706 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:25.708 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:25.709 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:25.710 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:25.711 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:25.713 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:25.713 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:25.714 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:25.715 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:25.716 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:25.720 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:25.722 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000002B": started reading request body.
+2025-05-13 01:13:25.725 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000002B": done reading request body.
+2025-05-13 01:13:25.729 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:25.731 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:25.734 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:25.736 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:25.738 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:25.739 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:25.742 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:25.743 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:25.748 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:25.752 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:25.754 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:25.757 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 44.0245ms
+2025-05-13 01:13:25.761 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:25.763 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 65.7024ms
+2025-05-13 01:13:25.872 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:25.878 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:25.880 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:25.882 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:25.883 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:25.884 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:25.885 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:25.886 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:25.887 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:25.889 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:25.890 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:25.892 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:25.893 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:25.894 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:25.895 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:25.896 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:25.898 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:25.899 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:25.900 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:25.900 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000002D": started reading request body.
+2025-05-13 01:13:25.901 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000002D": done reading request body.
+2025-05-13 01:13:25.902 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:25.903 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:25.904 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:25.905 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:25.906 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:25.907 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:25.910 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:25.911 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:25.911 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:25.912 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:25.913 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:25.914 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 19.2611ms
+2025-05-13 01:13:25.916 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:25.917 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 44.7697ms
+2025-05-13 01:13:26.075 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:13:26.080 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:13:26.082 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:13:26.085 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:26.087 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:26.089 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:13:26.090 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:13:26.095 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:26.097 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:13:26.101 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:13:26.103 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:13:26.105 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:13:26.106 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:13:26.109 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:13:26.111 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:26.113 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:13:26.115 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:26.120 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:13:26.122 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:13:26.126 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000002F": started reading request body.
+2025-05-13 01:13:26.129 +03:00 [DBG] Connection id "0HNCHK87E39O3", Request id "0HNCHK87E39O3:0000002F": done reading request body.
+2025-05-13 01:13:26.135 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:13:26.136 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:26.137 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:26.139 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:13:26.140 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:13:26.142 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:13:26.143 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:13:26.144 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:13:26.145 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:13:26.145 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:13:26.147 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-05-13 01:13:26.149 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 38.055ms
+2025-05-13 01:13:26.150 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:13:26.151 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 404 null text/plain; charset=utf-8 76.1376ms
+2025-05-13 01:14:26.745 +03:00 [INF] Application is shutting down...
+2025-05-13 01:14:26.747 +03:00 [DBG] Hosting stopping
+2025-05-13 01:14:26.763 +03:00 [DBG] Connection id "0HNCHK87E39O3" is closing.
+2025-05-13 01:14:26.768 +03:00 [DBG] Connection id "0HNCHK87E39O3" is closed. The last processed stream ID was 47.
+2025-05-13 01:14:26.771 +03:00 [DBG] Connection id "0HNCHK87E39O3" received FIN.
+2025-05-13 01:14:26.773 +03:00 [DBG] Connection id "0HNCHK87E39O3" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-05-13 01:14:26.774 +03:00 [DBG] The connection queue processing loop for 0HNCHK87E39O3 completed.
+2025-05-13 01:14:26.782 +03:00 [DBG] Connection id "0HNCHK87E39O3" stopped.
+2025-05-13 01:14:26.788 +03:00 [DBG] Hosting stopped
+2025-05-13 01:14:30.935 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-05-13 01:14:31.032 +03:00 [DBG] Hosting starting
+2025-05-13 01:14:31.050 +03:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-13 01:14:31.063 +03:00 [DBG] Reading data from file 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys\key-9f88ca70-09f0-4af8-8640-aa442d6731f6.xml'.
+2025-05-13 01:14:31.071 +03:00 [DBG] Found key {9f88ca70-09f0-4af8-8640-aa442d6731f6}.
+2025-05-13 01:14:31.083 +03:00 [DBG] Considering key {9f88ca70-09f0-4af8-8640-aa442d6731f6} with expiration date 2025-07-27 19:26:58Z as default key.
+2025-05-13 01:14:31.089 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-05-13 01:14:31.095 +03:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-05-13 01:14:31.099 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-05-13 01:14:31.107 +03:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-05-13 01:14:31.110 +03:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-05-13 01:14:31.114 +03:00 [DBG] Using key {9f88ca70-09f0-4af8-8640-aa442d6731f6} as the default key.
+2025-05-13 01:14:31.117 +03:00 [DBG] Key ring with default key {9f88ca70-09f0-4af8-8640-aa442d6731f6} was loaded during application startup.
+2025-05-13 01:14:31.198 +03:00 [INF] Now listening on: https://localhost:7263
+2025-05-13 01:14:31.200 +03:00 [INF] Now listening on: http://localhost:5169
+2025-05-13 01:14:31.202 +03:00 [DBG] Loaded hosting startup assembly myProjectCore
+2025-05-13 01:14:31.203 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-13 01:14:31.205 +03:00 [INF] Hosting environment: Development
+2025-05-13 01:14:31.206 +03:00 [INF] Content root path: C:\תיכנות\יד\זילברברג\myProjectCore
+2025-05-13 01:14:31.207 +03:00 [DBG] Hosting started
+2025-05-13 01:14:33.587 +03:00 [DBG] Connection id "0HNCHK9FU4C7V" accepted.
+2025-05-13 01:14:33.592 +03:00 [DBG] Connection id "0HNCHK9FU4C7V" started.
+2025-05-13 01:14:33.650 +03:00 [DBG] Connection 0HNCHK9FU4C7V established using the following protocol: "Tls13"
+2025-05-13 01:14:33.698 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/ - null null
+2025-05-13 01:14:33.705 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-05-13 01:14:33.721 +03:00 [DBG] No candidates found for the request path '/'
+2025-05-13 01:14:33.723 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:33.739 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:33.749 +03:00 [INF] The file //html/item.html was not modified
+2025-05-13 01:14:33.754 +03:00 [DBG] Handled. Status code: 304 File: //html/item.html
+2025-05-13 01:14:33.760 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263//html/item.html - 304 null text/html 62.8482ms
+2025-05-13 01:14:33.786 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/css/item.css - null null
+2025-05-13 01:14:33.786 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/css/general.css - null null
+2025-05-13 01:14:33.797 +03:00 [DBG] No candidates found for the request path '/css/general.css'
+2025-05-13 01:14:33.791 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/js/general.js - null null
+2025-05-13 01:14:33.793 +03:00 [DBG] No candidates found for the request path '/css/item.css'
+2025-05-13 01:14:33.791 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/js/item.js - null null
+2025-05-13 01:14:33.799 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:33.806 +03:00 [DBG] No candidates found for the request path '/js/general.js'
+2025-05-13 01:14:33.808 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:33.813 +03:00 [DBG] No candidates found for the request path '/js/item.js'
+2025-05-13 01:14:33.816 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:33.816 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:33.820 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:33.822 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:33.829 +03:00 [INF] The file /css/general.css was not modified
+2025-05-13 01:14:33.830 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:33.832 +03:00 [INF] The file /css/item.css was not modified
+2025-05-13 01:14:33.835 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:33.838 +03:00 [DBG] Handled. Status code: 304 File: /css/general.css
+2025-05-13 01:14:33.840 +03:00 [INF] The file /js/general.js was not modified
+2025-05-13 01:14:33.844 +03:00 [DBG] Handled. Status code: 304 File: /css/item.css
+2025-05-13 01:14:33.847 +03:00 [INF] The file /js/item.js was not modified
+2025-05-13 01:14:33.848 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/css/general.css - 304 null text/css 61.9525ms
+2025-05-13 01:14:33.851 +03:00 [DBG] Handled. Status code: 304 File: /js/general.js
+2025-05-13 01:14:33.855 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/css/item.css - 304 null text/css 68.3581ms
+2025-05-13 01:14:33.856 +03:00 [DBG] Handled. Status code: 304 File: /js/item.js
+2025-05-13 01:14:33.870 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/js/general.js - 304 null text/javascript 78.7868ms
+2025-05-13 01:14:33.879 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/js/item.js - 304 null text/javascript 88.5039ms
+2025-05-13 01:14:33.901 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/html/login.html - null null
+2025-05-13 01:14:33.908 +03:00 [DBG] No candidates found for the request path '/html/login.html'
+2025-05-13 01:14:33.909 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:33.910 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:33.911 +03:00 [INF] The file /html/login.html was not modified
+2025-05-13 01:14:33.912 +03:00 [DBG] Handled. Status code: 304 File: /html/login.html
+2025-05-13 01:14:33.913 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/html/login.html - 304 null text/html 11.9993ms
+2025-05-13 01:14:33.936 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/css/login.css - null null
+2025-05-13 01:14:33.942 +03:00 [DBG] No candidates found for the request path '/css/login.css'
+2025-05-13 01:14:33.944 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:33.946 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:33.948 +03:00 [INF] The file /css/login.css was not modified
+2025-05-13 01:14:33.950 +03:00 [DBG] Handled. Status code: 304 File: /css/login.css
+2025-05-13 01:14:33.951 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/css/login.css - 304 null text/css 15.8747ms
+2025-05-13 01:14:39.116 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7263/Login - application/json 28
+2025-05-13 01:14:39.129 +03:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-05-13 01:14:39.143 +03:00 [DBG] Endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)' with route pattern 'Login' is valid for the request path '/Login'
+2025-05-13 01:14:39.165 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:14:39.175 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:39.180 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:39.258 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-05-13 01:14:39.269 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:14:39.354 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(webApiProject.Models.LoginRequest) on controller webApiProject.Controllers.LoginController (myProjectCore).
+2025-05-13 01:14:39.369 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:14:39.377 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:14:39.394 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:14:39.404 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:14:39.412 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:14:39.454 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:14:39.538 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.LoginController (myProjectCore)
+2025-05-13 01:14:39.546 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:14:39.557 +03:00 [DBG] Attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest' using the name '' in request data ...
+2025-05-13 01:14:39.568 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-05-13 01:14:39.606 +03:00 [DBG] Connection id "0HNCHK9FU4C7V", Request id "0HNCHK9FU4C7V:0000000F": started reading request body.
+2025-05-13 01:14:39.620 +03:00 [DBG] Connection id "0HNCHK9FU4C7V", Request id "0HNCHK9FU4C7V:0000000F": done reading request body.
+2025-05-13 01:14:39.632 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'webApiProject.Models.LoginRequest'
+2025-05-13 01:14:39.646 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:14:39.652 +03:00 [DBG] Done attempting to bind parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:14:39.674 +03:00 [DBG] Attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest' ...
+2025-05-13 01:14:39.715 +03:00 [DBG] Done attempting to validate the bound parameter 'user' of type 'webApiProject.Models.LoginRequest'.
+2025-05-13 01:14:39.939 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:14:39.961 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:14:39.967 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:14:39.972 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:14:39.980 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-05-13 01:14:40.001 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-05-13 01:14:40.024 +03:00 [INF] Executed action webApiProject.Controllers.LoginController.Login (myProjectCore) in 595.1499ms
+2025-05-13 01:14:40.033 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.LoginController.Login (myProjectCore)'
+2025-05-13 01:14:40.046 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7263/Login - 200 null text/plain; charset=utf-8 928.9392ms
+2025-05-13 01:14:40.070 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/html/item.html - null null
+2025-05-13 01:14:40.079 +03:00 [DBG] No candidates found for the request path '/html/item.html'
+2025-05-13 01:14:40.086 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:40.091 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:40.100 +03:00 [INF] The file /html/item.html was not modified
+2025-05-13 01:14:40.104 +03:00 [DBG] Handled. Status code: 304 File: /html/item.html
+2025-05-13 01:14:40.112 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/html/item.html - 304 null text/html 41.6294ms
+2025-05-13 01:14:40.158 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/shoes - null null
+2025-05-13 01:14:40.159 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/users/2 - null null
+2025-05-13 01:14:40.166 +03:00 [DBG] 1 candidate(s) found for the request path '/shoes'
+2025-05-13 01:14:40.171 +03:00 [DBG] 1 candidate(s) found for the request path '/users/2'
+2025-05-13 01:14:40.173 +03:00 [DBG] Endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)' with route pattern 'Shoes' is valid for the request path '/shoes'
+2025-05-13 01:14:40.176 +03:00 [DBG] Endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)' with route pattern 'Users/{id}' is valid for the request path '/users/2'
+2025-05-13 01:14:40.182 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:14:40.185 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:14:40.191 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:40.195 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:40.197 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:40.201 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:40.313 +03:00 [INF] Successfully validated the token.
+2025-05-13 01:14:40.313 +03:00 [INF] Successfully validated the token.
+2025-05-13 01:14:40.318 +03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-05-13 01:14:40.316 +03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-05-13 01:14:40.344 +03:00 [DBG] Authorization was successful.
+2025-05-13 01:14:40.345 +03:00 [DBG] Authorization was successful.
+2025-05-13 01:14:40.359 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:14:40.356 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:14:40.376 +03:00 [INF] Route matched with {action = "Get", controller = "Shoes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[webApiProject.Models.Shoes]] Get() on controller webApiProject.Controllers.ShoesController (myProjectCore).
+2025-05-13 01:14:40.390 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[webApiProject.Models.Users] Get(Int32) on controller webApiProject.Controllers.UsersController (myProjectCore).
+2025-05-13 01:14:40.392 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:14:40.400 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:14:40.410 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:14:40.423 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:14:40.443 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:14:40.431 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:14:40.456 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:14:40.471 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:14:40.479 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:14:40.488 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:14:40.497 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:14:40.503 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.ShoesController (myProjectCore)
+2025-05-13 01:14:40.523 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:14:40.533 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2025-05-13 01:14:40.539 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2025-05-13 01:14:40.548 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.ShoesController (myProjectCore)
+2025-05-13 01:14:40.577 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-05-13 01:14:40.587 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-05-13 01:14:40.585 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:14:40.605 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:14:40.598 +03:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2025-05-13 01:14:40.614 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:14:40.627 +03:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2025-05-13 01:14:40.642 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:14:40.653 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:14:40.654 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-05-13 01:14:40.663 +03:00 [DBG] No information found on request to perform content negotiation.
+2025-05-13 01:14:40.675 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApiProject.Models.Shoes, myProjectCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-13 01:14:40.682 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-05-13 01:14:40.697 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-05-13 01:14:40.702 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-05-13 01:14:40.706 +03:00 [INF] Executing ObjectResult, writing value of type 'webApiProject.Models.Users'.
+2025-05-13 01:14:40.783 +03:00 [INF] Executed action webApiProject.Controllers.UsersController.Get (myProjectCore) in 286.2444ms
+2025-05-13 01:14:40.811 +03:00 [INF] Executed action webApiProject.Controllers.ShoesController.Get (myProjectCore) in 307.4324ms
+2025-05-13 01:14:40.848 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:14:40.865 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.ShoesController.Get (myProjectCore)'
+2025-05-13 01:14:40.884 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/users/2 - 200 null application/json; charset=utf-8 724.7204ms
+2025-05-13 01:14:40.888 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/shoes - 200 null application/json; charset=utf-8 730.5528ms
+2025-05-13 01:14:49.076 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/html/user.html - null null
+2025-05-13 01:14:49.081 +03:00 [DBG] No candidates found for the request path '/html/user.html'
+2025-05-13 01:14:49.084 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:49.089 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:49.150 +03:00 [INF] Sending file. Request path: '/html/user.html'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\html\user.html'
+2025-05-13 01:14:49.157 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/html/user.html - 200 3320 text/html 80.4144ms
+2025-05-13 01:14:49.215 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/js/user.js - null null
+2025-05-13 01:14:49.230 +03:00 [DBG] No candidates found for the request path '/js/user.js'
+2025-05-13 01:14:49.236 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:14:49.241 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:14:49.331 +03:00 [INF] Sending file. Request path: '/js/user.js'. Physical path: 'C:\תיכנות\יד\זילברברג\myProjectCore\wwwroot\js\user.js'
+2025-05-13 01:14:49.342 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/js/user.js - 200 8443 text/javascript 127.0982ms
+2025-05-13 01:14:49.352 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/users - application/json null
+2025-05-13 01:14:49.365 +03:00 [DBG] 1 candidate(s) found for the request path '/users'
+2025-05-13 01:14:49.368 +03:00 [DBG] Endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)' with route pattern 'Users' is valid for the request path '/users'
+2025-05-13 01:14:49.373 +03:00 [DBG] Request matched endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:14:49.376 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:49.379 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-05-13 01:14:49.388 +03:00 [INF] Successfully validated the token.
+2025-05-13 01:14:49.390 +03:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-05-13 01:14:49.397 +03:00 [DBG] Authorization was successful.
+2025-05-13 01:14:49.399 +03:00 [INF] Executing endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:14:49.406 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[webApiProject.Models.Users]] Get() on controller webApiProject.Controllers.UsersController (myProjectCore).
+2025-05-13 01:14:49.412 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-05-13 01:14:49.416 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-05-13 01:14:49.420 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-05-13 01:14:49.423 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-05-13 01:14:49.428 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-05-13 01:14:49.431 +03:00 [DBG] Executing controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:14:49.435 +03:00 [DBG] Executed controller factory for controller webApiProject.Controllers.UsersController (myProjectCore)
+2025-05-13 01:14:49.439 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-05-13 01:14:49.447 +03:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-05-13 01:14:49.451 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-05-13 01:14:49.454 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApiProject.Models.Users, myProjectCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-13 01:14:49.459 +03:00 [INF] Executed action webApiProject.Controllers.UsersController.Get (myProjectCore) in 27.5795ms
+2025-05-13 01:14:49.462 +03:00 [INF] Executed endpoint 'webApiProject.Controllers.UsersController.Get (myProjectCore)'
+2025-05-13 01:14:49.465 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/users - 200 null application/json; charset=utf-8 112.6985ms
+2025-05-13 01:15:02.166 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7263/images/hide.png - null null
+2025-05-13 01:15:02.175 +03:00 [DBG] No candidates found for the request path '/images/hide.png'
+2025-05-13 01:15:02.178 +03:00 [DBG] Request did not match any endpoints
+2025-05-13 01:15:02.180 +03:00 [DBG] The request path  does not match the path filter
+2025-05-13 01:15:02.195 +03:00 [INF] The file /images/hide.png was not modified
+2025-05-13 01:15:02.213 +03:00 [DBG] Handled. Status code: 304 File: /images/hide.png
+2025-05-13 01:15:02.220 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7263/images/hide.png - 304 null image/png 53.7612ms
+2025-05-13 01:15:16.044 +03:00 [INF] Application is shutting down...
+2025-05-13 01:15:16.048 +03:00 [DBG] Hosting stopping
+2025-05-13 01:15:16.075 +03:00 [DBG] Connection id "0HNCHK9FU4C7V" is closing.
+2025-05-13 01:15:16.094 +03:00 [DBG] Connection id "0HNCHK9FU4C7V" is closed. The last processed stream ID was 29.
+2025-05-13 01:15:16.105 +03:00 [DBG] Connection id "0HNCHK9FU4C7V" received FIN.
+2025-05-13 01:15:16.109 +03:00 [DBG] The connection queue processing loop for 0HNCHK9FU4C7V completed.
+2025-05-13 01:15:16.114 +03:00 [DBG] Connection id "0HNCHK9FU4C7V" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-05-13 01:15:16.154 +03:00 [DBG] Connection id "0HNCHK9FU4C7V" stopped.
+2025-05-13 01:15:16.167 +03:00 [DBG] Hosting stopped

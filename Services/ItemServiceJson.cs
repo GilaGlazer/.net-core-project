@@ -147,6 +147,16 @@ public class ItemServiceJson<T> : IService<T>
                 if (user == null)
                     return false;
             }
+            if (activeUserService.Type != "admin")
+                newItem.UserId = activeUserService.UserId;
+            else
+            {
+                var usersService = usersServiceFactory();
+                var user = usersService.Get(newItem.UserId);
+                if (user == null)
+                    return false;
+            }
+
             foreach (var property in typeof(T).GetProperties())
             {
                 if (property.CanWrite)

@@ -1,15 +1,22 @@
 const userUri = '/users'; // URI למשתמשים
 let users = []; // מערך למשתמשים
 
+const getToken = () => {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+        return null;
+    }
+    return token;
+};
+
 // פונקציה להבאת כל המשתמשים (admin בלבד)
 const getUsers = async () => {
     try {
-        const token = localStorage.getItem("authToken"); // קבלת הטוקן
+       const token= getToken(); 
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
-
         const response = await fetch(userUri, {
             method: 'GET',
             headers: {
@@ -18,18 +25,16 @@ const getUsers = async () => {
                 'Content-Type': 'application/json'
             }
         });
-
         if (!response.ok) {
-            if (response.status === 401) {
+            if (response.status === 403) {
                 console.log("Access denied. Admin permissions required.");
             } else {
                 throw new Error(`Unable to fetch users: ${response.statusText}`);
             }
             return;
         }
-
         const data = await response.json();
-        _displayUsers(data);
+        displayUsers(data);
     } catch (error) {
         console.error('Error fetching users:', error);
     }
@@ -47,14 +52,12 @@ const addUser = async () => {
         email: addEmailTextbox.value.trim(),
         type: addTypeTextbox.value.trim()
     };
-
     try {
-        const token = localStorage.getItem("authToken");
+        const token =getToken();
         if (!token) {
             alert("You are not logged in. Please log in.");
             return;
         }
-
         const response = await fetch(userUri, {
             method: 'POST',
             headers: {
@@ -83,7 +86,7 @@ const addUser = async () => {
 // פונקציה למחיקת משתמש (admin בלבד)
 const deleteUser = async (id) => {
     try {
-        const token = localStorage.getItem("authToken");
+        const token = getToken();
         if (!token) {
             alert("You are not logged in. Please log in.");
             return;
@@ -109,41 +112,31 @@ const deleteUser = async (id) => {
 // // פונקציה להצגת טופס עריכה
 const displayEditUserForm = (id) => {
     const user = users.find(user => user.id === id);
-
     if (!user) {
         console.log("User not found.");
         return;
     }
-
     // טוען את פרטי המשתמש לטופס
     document.getElementById('edit-username').value = user.userName || '';
     document.getElementById('edit-email').value = user.email || '';
     document.getElementById('edit-password').value = user.password || '';
     document.getElementById('edit-type').value = user.type || '';
     document.getElementById('edit-id').value = user.id || '';
-
     // פותח את חלון העריכה
     openEditUserModal(id);
 };
+
 
 // פונקציה לסגירת טופס עריכה
 const closeUserInput = () => {
     document.getElementById('editUserForm').style.display = 'none';
 };
 
-// פונקציה להצגת כמות המשתמשים
-const _displayUserCount = (userCount) => {
-    const name = (userCount === 1) ? 'user' : 'users';
-    document.getElementById('user-counter').innerText = `${userCount} ${name}`;
-};
 
 // פונקציה להצגת המשתמשים בטבלה
-const _displayUsers = (data) => {
+const displayUsers = (data) => {
     const tBody = document.getElementById('users');
     tBody.innerHTML = '';
-
-    _displayUserCount(data.length);
-
     const button = document.createElement('button');
 
     data.forEach(user => {
@@ -153,6 +146,7 @@ const _displayUsers = (data) => {
 
         let deleteButton = button.cloneNode(false);
         deleteButton.innerText = 'Delete';
+        deleteButton.className = 'delete-button';
         deleteButton.setAttribute('onclick', `deleteUser(${user.id})`);
 
         let tr = tBody.insertRow();
@@ -232,7 +226,7 @@ const updateUser = async () => {
     };
 
     try {
-        const token = localStorage.getItem("authToken");
+        const token = getToken();
         if (!token) {
             alert("You are not logged in. Please log in.");
             return;
@@ -260,9 +254,6 @@ const updateUser = async () => {
 };
 
 
-
 const redirectToItemsPage = () => {
     window.location.href = "/html/item.html";
-};
-
-
+}
