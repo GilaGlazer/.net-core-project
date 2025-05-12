@@ -20,16 +20,16 @@ namespace webApiProject.Controllers
         [HttpPost]
         // [Route("[action]")]
         [Route("")]
-
         public ActionResult<String> Login([FromBody] LoginRequest user)
         {
-                        System.Console.WriteLine(user.Email);
+            System.Console.WriteLine(user.Email);
 
             if (string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Password))
                 return BadRequest("Email and Password are required.");
 
-            var existingUser = usersService.Get().FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
-            System.Console.WriteLine(existingUser.Id);
+            var existingUser = usersService
+                .Get()
+                .FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
             if (existingUser == null)
                 return Unauthorized();
 
@@ -57,9 +57,5 @@ namespace webApiProject.Controllers
 
         //     return new OkObjectResult(AuthTokenService.WriteToken(token));
         // }
-
     }
-
-
-
 }

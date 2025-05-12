@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="../css/login.css">
   <script src="../js/login.js" defer></script>
 </head>
+
 <body>
   <div class="login-container">
     <div class="login-card">
@@ -18,16 +20,16 @@
           <input type="text" id="email" name="email" placeholder="Enter your email" required>
         </div>
 
-        <!-- Password input -->
-        <div class="form-group">
+        <div class="password-wrapper form-group">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          <img id="togglePassword" class="toggle-password" src="../images/visible.png" alt="Toggle visibility">
         </div>
 
         <!-- Sign In button -->
         <button type="submit" class="btn-primary">Sign In</button>
       </form>
-
+      <!-- <div id="error-message" class="error-message" >User does not exist</div> -->
       <!-- OR divider -->
       <div class="divider">
         <span>OR</span>
@@ -41,4 +43,5 @@
     </div>
   </div>
 </body>
+
 </html>

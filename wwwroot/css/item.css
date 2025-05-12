@@ -194,3 +194,6 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: #45a049;
 }
+#show-users-button,#add-userId{
+    display: none;
+}

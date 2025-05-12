@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
 
     // Basic validation
     if (!email || !password) {
-        alert("Please fill out all fields.");
+        alert("User not found");
         return;
     }
 
@@ -29,12 +29,20 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
         // Save the token to localStorage or sessionStorage
         localStorage.setItem("authToken", token);
 
-        alert("Sign In successful!");
         // Redirect to another page if needed
         window.location.href = "/html/item.html";
     } catch (error) {
-        alert(error.message);
+        console.log(error.message);
     }
 });
+// Add toggle password visibility functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
 
-
+    togglePassword.addEventListener('click', () => {
+        const isPasswordVisible = passwordInput.type === 'text';
+        passwordInput.type = isPasswordVisible ? 'password' : 'text';
+        togglePassword.src = isPasswordVisible ? '../images/visible.png' : '../images/hide.png';
+    });
+});

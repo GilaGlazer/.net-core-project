@@ -20,8 +20,8 @@ const getUsers = async () => {
         });
 
         if (!response.ok) {
-            if (response.status === 403) {
-                alert("Access denied. Admin permissions required.");
+            if (response.status === 401) {
+                console.log("Access denied. Admin permissions required.");
             } else {
                 throw new Error(`Unable to fetch users: ${response.statusText}`);
             }
@@ -51,7 +51,7 @@ const addUser = async () => {
     try {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
 
@@ -85,7 +85,7 @@ const deleteUser = async (id) => {
     try {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
 
@@ -111,7 +111,7 @@ const displayEditUserForm = (id) => {
     const user = users.find(user => user.id === id);
 
     if (!user) {
-        alert("User not found.");
+        console.log("User not found.");
         return;
     }
 
@@ -125,45 +125,6 @@ const displayEditUserForm = (id) => {
     // פותח את חלון העריכה
     openEditUserModal(id);
 };
-
-// פונקציה לעדכון משתמש (admin בלבד)
-// const updateUser = async () => {
-//     const userId = document.getElementById('edit-id').value;
-//     const user = {
-//         id: parseInt(userId, 10),
-//         userName: document.getElementById('edit-username').value.trim(),
-//         password: document.getElementById('edit-password').value.trim(),
-//         email: document.getElementById('edit-email').value.trim(),
-//         type: document.getElementById('edit-type').value.trim()
-//     };
-    
-//     try {
-//         const token = localStorage.getItem("authToken");
-//         if (!token) {
-//             alert("No token found. Please log in.");
-//             return;
-//         }
-
-//         const response = await fetch(`${userUri}/${userId}`, {
-//             method: 'PUT',
-//             headers: {
-//                 'Authorization': `Bearer ${token}`,
-//                 'Accept': 'application/json',
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(user)
-//         });
-
-//         if (!response.ok) {
-//             throw new Error(`Unable to update user: ${response.statusText}`);
-//         }
-
-//         await getUsers(); // עדכון הרשימה
-//         closeUserInput();
-//     } catch (error) {
-//         console.error('Error updating user:', error);
-//     }
-// };
 
 // פונקציה לסגירת טופס עריכה
 const closeUserInput = () => {
@@ -205,7 +166,7 @@ const _displayUsers = (data) => {
         td2.appendChild(textNodeEmail);
 
         let td3 = tr.insertCell(2);
-        let textNodePassword = document.createTextNode(user.password); 
+        let textNodePassword = document.createTextNode(user.password);
         td3.appendChild(textNodePassword);
 
         let td4 = tr.insertCell(3);
@@ -239,7 +200,7 @@ const openEditUserModal = (id) => {
     const user = users.find(user => user.id === id);
 
     if (!user) {
-        alert("User not found.");
+        console.log("User not found.");
         return;
     }
 
@@ -273,7 +234,7 @@ const updateUser = async () => {
     try {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            alert("No token found. Please log in.");
+            alert("You are not logged in. Please log in.");
             return;
         }
 
@@ -298,5 +259,10 @@ const updateUser = async () => {
     }
 };
 
+
+
+const redirectToItemsPage = () => {
+    window.location.href = "/html/item.html";
+};
 
 

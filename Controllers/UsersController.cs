@@ -130,7 +130,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Authorize(Policy = "admin")]
+    // [Authorize(Policy = "admin")]
 
     public ActionResult Put(int id, Users newItem)
     {

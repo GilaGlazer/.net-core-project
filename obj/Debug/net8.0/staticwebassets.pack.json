@@ -29,8 +29,20 @@
       "PackagePath": "staticwebassets\\images\\google-icon.png"
     },
     {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\images\\hide.png",
+      "PackagePath": "staticwebassets\\images\\hide.png"
+    },
+    {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\images\\visible.png",
+      "PackagePath": "staticwebassets\\images\\visible.png"
+    },
+    {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\item.js",
       "PackagePath": "staticwebassets\\js\\item.js"
+    },
+    {
+      "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\jeneral.js",
+      "PackagePath": "staticwebassets\\js\\jeneral.js"
     },
     {
       "Id": "C:\\תיכנות\\יד\\זילברברג\\myProjectCore\\wwwroot\\js\\login.js",
