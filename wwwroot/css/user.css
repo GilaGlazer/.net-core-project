@@ -6,9 +6,4 @@ h1 {
     margin-bottom: 20px;
 }
 
-select {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
+

@@ -6,7 +6,7 @@
     <title>Shoes Management</title>
     <link rel="stylesheet" href="../css/item.css" />
     <link rel="stylesheet" href="../css/general.css" />
-
+    
     <script src="../js/item.js" defer></script>
     <script src="../js/general.js" defer></script>
 </head>
@@ -39,7 +39,7 @@
                 <input type="text" id="add-name" placeholder="Name" required>
                 <input type="number" id="add-size" placeholder="Size" required min="18" max="50">
                 <input type="text" id="add-color" placeholder="Color" required>
-                <input type="text" id="add-userId" placeholder="User Id">
+                <select name="add-userId" id="add-userId"></select>
                 <input type="submit" value="Add Shoe">
             </form>
         </div>
@@ -55,6 +55,7 @@
                 <input type="text" id="edit-name" placeholder="Shoe name" required>
                 <input type="number" id="edit-size" placeholder="Size" required min="18" max="50">
                 <input type="text" id="edit-color" placeholder="Color" required>
+                <select name="edit-item-id" id="edit-item-id"></select>
                 <input type="submit" value="Save Changes">
             </form>
         </div>
@@ -75,22 +76,24 @@
         </div>
     </div>
 
+    <div id="displayUserDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDisplayUserDetailsModal()">&times;</span>
+            <h3>User Details</h3>
+            <div id="user-details"></div>
+        </div>
+    </div>
+
     <table>
         <tr>
             <th>Name</th>
             <th>Size</th>
             <th>Color</th>
-            <th></th>
-            <th></th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <tbody id="shoes"></tbody>
     </table>
-
-    <script type="text/javascript">
-        getUserDetails();
-        getItems();
-        checkAuthState();
-    </script>
 </body>
 
 </html>

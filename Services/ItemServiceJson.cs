@@ -66,7 +66,6 @@ public class ItemServiceJson<T> : IService<T>
 
     public List<T> Get()
     {
-        System.Console.WriteLine("Get shoes");
         try
         {
             if (activeUserService.Type == "admin")
@@ -138,6 +137,11 @@ public class ItemServiceJson<T> : IService<T>
             var item = itemList.FirstOrDefault(s => s.Id == id);
             if (item == null)
                 return false;
+
+            // אם המשתמש הוא מנהל, אל תאפשר לו לעדכן פריט של משתמש אחר
+            if (activeUserService.Type == "admin" && item.UserId != newItem.UserId)
+                return false;
+
             if (activeUserService.Type != "admin")
                 newItem.UserId = activeUserService.UserId;
             else

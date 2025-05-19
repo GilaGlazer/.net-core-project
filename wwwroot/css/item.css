@@ -7,7 +7,7 @@
 
 
 #show-users-button,
-#add-userId {
+#add-userId,
+#edit-item-id {
     display: none;
 }
-

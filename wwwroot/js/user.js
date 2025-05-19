@@ -9,36 +9,10 @@ const getToken = () => {
     return token;
 };
 
-// פונקציה להבאת כל המשתמשים (admin בלבד)
 const getUsers = async () => {
-    try {
-       const token= getToken(); 
-        if (!token) {
-            alert("You are not logged in. Please log in.");
-            return;
-        }
-        const response = await fetch(userUri, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        });
-        if (!response.ok) {
-            if (response.status === 403) {
-                console.log("Access denied. Admin permissions required.");
-            } else {
-                throw new Error(`Unable to fetch users: ${response.statusText}`);
-            }
-            return;
-        }
-        const data = await response.json();
-        displayUsers(data);
-    } catch (error) {
-        console.error('Error fetching users:', error);
-    }
-};
+    const data = await getAllUsers();
+    displayUsers(data);
+}
 
 const addUser = async () => {
     const addUsernameTextbox = document.getElementById('add-username');
@@ -52,8 +26,9 @@ const addUser = async () => {
         email: addEmailTextbox.value.trim(),
         type: addTypeTextbox.value.trim()
     };
+
     try {
-        const token =getToken();
+        const token = getToken();
         if (!token) {
             alert("You are not logged in. Please log in.");
             return;
@@ -149,6 +124,10 @@ const displayUsers = (data) => {
         deleteButton.className = 'delete-button';
         deleteButton.setAttribute('onclick', `deleteUser(${user.id})`);
 
+        let userItemsBtn = button.cloneNode(false);
+        userItemsBtn.innerHTML = `User's Shoes`;
+        userItemsBtn.setAttribute('onclick', `displayUserItemsToUser(${user.id})`);
+
         let tr = tBody.insertRow();
 
         let td1 = tr.insertCell(0);
@@ -172,9 +151,12 @@ const displayUsers = (data) => {
 
         let td6 = tr.insertCell(5);
         td6.appendChild(deleteButton);
+
+        let td7 = tr.insertCell(6);
+        td7.appendChild(userItemsBtn);
     });
 
-    users = data; // עדכון המערך ל-users
+    users = data;
 };
 
 
@@ -192,7 +174,6 @@ const closeAddUserModal = () => {
 // פונקציה להצגת חלון עריכה
 const openEditUserModal = (id) => {
     const user = users.find(user => user.id === id);
-
     if (!user) {
         console.log("User not found.");
         return;
@@ -202,9 +183,16 @@ const openEditUserModal = (id) => {
     document.getElementById('edit-username').value = user.userName || '';
     document.getElementById('edit-email').value = user.email || '';
     document.getElementById('edit-password').value = user.password || '';
-    document.getElementById('edit-type').value = user.type || '';
     document.getElementById('edit-id').value = user.id || '';
 
+    let select =document.getElementById('edit-type');
+    select.value = user.type || '';
+
+    Array.from(select.options).forEach(option => {
+        if (option.value === user.type) {
+            option.selected = true;
+        }
+    });
     // מציג את החלון
     document.getElementById('editUserModal').style.display = 'block';
 };
@@ -224,7 +212,6 @@ const updateUser = async () => {
         email: document.getElementById('edit-email').value.trim(),
         type: document.getElementById('edit-type').value.trim()
     };
-
     try {
         const token = getToken();
         if (!token) {
@@ -257,3 +244,44 @@ const updateUser = async () => {
 const redirectToItemsPage = () => {
     window.location.href = "/html/item.html";
 }
+
+const closeUserItemsModal = () => {
+    document.getElementById('userItemsModal').style.display = 'none';
+}
+
+const displayUserItemsToUser = async (id) => {
+    const shoes = await getAllItems();
+    const userItems = shoes.filter(s => s.userId === id);
+
+    if (!userItems || userItems.length === 0) {
+        console.log("לא נמצאו פריטים למשתמש זה.");
+        return;
+    }
+
+    let tableHtml = `
+        <table style="width:100%; border-collapse: collapse;" border="1">
+            <thead style="background-color:#f0f0f0;">
+                <tr>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    userItems.forEach(item => {
+        tableHtml += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.size}</td>
+                <td>${item.color || '-'}</td>
+            </tr>
+        `;
+    });
+
+    tableHtml += '</tbody></table>';
+
+    document.getElementById('user-items-table').innerHTML = tableHtml;
+    document.getElementById('userItemsModal').style.display = 'block';
+};

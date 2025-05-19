@@ -1,21 +1,14 @@
 [
     {
-        "Id": 1,
-        "UserName": "Tzivi Ainoren",
-        "Password": "2",
-        "Email": "t",
+        "Id": 2,
+        "UserName": "Rivka Lev",
+        "Password": "Rivka456",
+        "Email": "rivka.levi@gmail.com",
         "Type": "user"
     },
     {
-        "Id": 2,
-        "UserName": "Rivka Levi",
-        "Password": "Rivka456",
-        "Email": "rivka.levi@gmail.com",
-        "Type": "admin"
-    },
-    {
         "Id": 3,
-        "UserName": "Sara Weiss",
+        "UserName": "Sara Weis",
         "Password": "Sara789",
         "Email": "sara.weiss@gmail.com",
         "Type": "user"
@@ -25,7 +18,7 @@
         "UserName": "Miriam Gold",
         "Password": "Miriam321",
         "Email": "miriam.gold@gmail.com",
-        "Type": "user"
+        "Type": "admin"
     },
     {
         "Id": 5,
@@ -215,5 +208,12 @@
         "Password": "1",
         "Email": "g",
         "Type": "admin"
+    },
+    {
+        "Id": 32,
+        "UserName": "\u05E9\u05D9\u05E8\u05D4",
+        "Password": "1234",
+        "Email": "llllll@gmail.com",
+        "Type": "user"
     }
 ]

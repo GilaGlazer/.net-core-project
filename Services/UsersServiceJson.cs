@@ -22,7 +22,7 @@ public class UsersServiceJson : IService<Users>
         Func<IService<Shoes>> shoesServiceFactory
     )
     {
-        try // Added
+        try
         {
             this.shoesServiceFactory = shoesServiceFactory;
             this.activeUserService = activeUserService;
@@ -44,7 +44,7 @@ public class UsersServiceJson : IService<Users>
                     ) ?? new List<Users>();
             }
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
             Console.WriteLine($"Error initializing UsersServiceJson: {ex.Message}");
             usersList = new List<Users>();
@@ -143,10 +143,10 @@ public class UsersServiceJson : IService<Users>
 
             return true;
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
-            Console.WriteLine($"Error in Update: {ex.Message}"); // Added
-            return false; // Added: החזר false במקרה של חריגה
+            Console.WriteLine($"Error in Update: {ex.Message}");
+            return false;
         }
     }
 
@@ -219,7 +219,7 @@ public class UsersServiceJson : IService<Users>
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(email, pattern);
         }
-        catch (Exception ex) // Added
+        catch (Exception ex)
         {
             Console.WriteLine($"Error in IsValidEmail: {ex.Message}");
             return false;

@@ -36,6 +36,7 @@
                 <th>Type</th>
                 <th>Edit</th>
                 <th>Delete</th>
+                <th>User's Shoes</th>
             </tr>
         </thead>
         <tbody id="users"></tbody>
@@ -50,8 +51,7 @@
                 <input type="text" id="add-username" placeholder="Enter Username" required>
                 <input type="text" id="add-password" placeholder="Enter Password" required>
                 <input type="email" id="add-email" placeholder="Enter Email" required>
-                <!-- <input type="text" id="add-type" placeholder="Enter Type (user/admin)" required> -->
-                <select id="edit-type" required>
+                <select id="add-type" required>
                     <option value="user">user</option>
                     <option value="admin">admin</option>
                 </select>
@@ -74,11 +74,20 @@
                     <option value="user">user</option>
                     <option value="admin">admin</option>
                 </select>
-                <!-- <input type="text" id="edit-type" placeholder="Edit Type (user/admin)" required> -->
                 <input type="submit" value="Save Changes">
             </form>
         </div>
     </div>
+
+    <!-- חלון מוקפץ להצגת נעליים של משתמש -->
+    <div id="userItemsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUserItemsModal()">&times;</span>
+            <h3>User's Shoe Details</h3>
+            <div id="user-items-table"></div>
+        </div>
+    </div>
+
 
     <script type="text/javascript">
         getUsers();

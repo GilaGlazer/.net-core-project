@@ -13,7 +13,6 @@ public class UsersController : ControllerBase
 
     public UsersController(UsersServiceJson usersService)
     {
-        System.Console.WriteLine("in Ctor UsersController");
         this.usersService = usersService;
     }
 
@@ -21,8 +20,6 @@ public class UsersController : ControllerBase
     [Authorize(Policy = "admin")]
     public ActionResult<IEnumerable<Users>> Get()
     {
-        System.Console.WriteLine("in Get controller");
-
         return usersService.Get();
     }
 
@@ -30,8 +27,6 @@ public class UsersController : ControllerBase
     [Authorize(Policy = "user")]
     public ActionResult<Users> Get(int id)
     {
-        System.Console.WriteLine("in Get whit id controller");
-
         var user = usersService.GetMyUser();
         if (user == null)
             return NotFound();
@@ -42,8 +37,6 @@ public class UsersController : ControllerBase
     [Authorize(Policy = "admin")]
     public ActionResult Post(Users newItem)
     {
-        System.Console.WriteLine("in post controller");
-
         var newId = usersService.Insert(newItem);
         if (newId == -1)
             return BadRequest();
@@ -53,8 +46,6 @@ public class UsersController : ControllerBase
     [HttpPut("{id}")]
     public ActionResult Put(int id, Users newItem)
     {
-        System.Console.WriteLine("in Put controller");
-
         if (usersService.Update(id, newItem))
             return NoContent();
         return BadRequest();
@@ -64,7 +55,6 @@ public class UsersController : ControllerBase
     [Authorize(Policy = "admin")]
     public ActionResult Delete(int id)
     {
-        System.Console.WriteLine("in Delete controller");
         if (usersService.Delete(id))
             return Ok();
         return NotFound();

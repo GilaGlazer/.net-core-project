@@ -37,7 +37,6 @@ const checkTokenAndRedirect = () => {
   }
 };
 
-
 const currentUserDetailsFromToken = () => {
   let token = getToken();
   if (token) {
@@ -49,6 +48,7 @@ const currentUserDetailsFromToken = () => {
   }
   return null;
 }
+
 window.onload = () => {
   checkTokenAndRedirect()
   let { userType } = currentUserDetailsFromToken();
@@ -57,22 +57,19 @@ window.onload = () => {
   }
   getItems();
   getUserDetails();
-};
 
+  if (userType === "admin") {
+    const tableHeadRow = document.querySelector("table tr");
+    const th = document.createElement("th");
+    th.textContent = "User Details";
+    tableHeadRow.appendChild(th);
+  }
+};
 
 // פונקציה לקבלת פריטים
 const getItems = async () => {
-  const token = getToken();
-  if (!token)
-    return;
-  try {
-    const response = await fetch(shoeUri, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    const data = await response.json();
+  try{
+    const data = await getAllItems();
     displayItems(data);
   } catch (error) {
     console.error('Unable to get items.', error);
@@ -141,8 +138,6 @@ const deleteItem = async (id) => {
   }
 };
 
-
-
 // פונקציה לעדכון פריט
 const updateItem = async () => {
   const token = getToken();
@@ -153,9 +148,9 @@ const updateItem = async () => {
     name: document.getElementById('edit-name').value.trim(),
     size: parseInt(document.getElementById('edit-size').value, 10),
     color: document.getElementById('edit-color').value.trim(),
-    userId: currentUserDetails.id,
+    // userId: document.getElementById('edit-item-id').value,
+    userId:currentUserDetails.id,
   };
-
   try {
     await fetch(`${shoeUri}/${itemId}`, {
       method: 'PUT',
@@ -179,14 +174,22 @@ const displayItems = (data) => {
   tBody.innerHTML = '';
   const button = document.createElement('button');
 
+  let { userType } = currentUserDetailsFromToken();
+
   data.forEach(item => {
     let editButton = button.cloneNode(false);
     editButton.innerText = 'Edit';
-    editButton.setAttribute('onclick', `openEditUserModal(${item.id})`);
+    editButton.setAttribute('onclick', `openEditItemModal(${item.id})`);
+
     let deleteButton = button.cloneNode(false);
     deleteButton.innerText = 'Delete';
     deleteButton.className = 'delete-button'; // הוספת מחלקת עיצוב
     deleteButton.setAttribute('onclick', `deleteItem(${item.id})`);
+
+    let userDetailsBtn = button.cloneNode(false);
+    userDetailsBtn.innerHTML = 'User Details';
+    userDetailsBtn.setAttribute('onclick', `displayUserDetailsToItem(${item.userId})`);
+
     let tr = tBody.insertRow();
     let td1 = tr.insertCell(0);
     let textNodeName = document.createTextNode(item.name);
@@ -201,6 +204,11 @@ const displayItems = (data) => {
     td4.appendChild(editButton);
     let td5 = tr.insertCell(4);
     td5.appendChild(deleteButton);
+
+    if (userType === "admin") {
+      let td6 = tr.insertCell(5);
+      td6.appendChild(userDetailsBtn);
+    }
   });
   shoes = data;
 };
@@ -210,8 +218,13 @@ const getUserDetails = async () => {
   const token = getToken();
   if (!token)
     return;
+
+  let { userId } = currentUserDetailsFromToken();
+  if (userId == null)
+    return;
+
   try {
-    const response = await fetch(`${userUri}/2`, {
+    const response = await fetch(`${userUri}/${userId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -233,8 +246,6 @@ const displayUserDetails = (user) => {
   document.getElementById('user-name').innerText = user.userName || '';
 };
 
-
-
 const checkAuthState = () => {
   const token = localStorage.getItem("authToken");
   //const loginButton = document.getElementById("login-button");
@@ -251,27 +262,40 @@ const checkAuthState = () => {
   }
 };
 
-
 const redirectToUsersPage = () => {
   window.location.href = "/html/user.html";
 }
 
-
-const openAddItemModal = () => {
+const openAddItemModal = async () => {
   let { userType } = currentUserDetailsFromToken();
   if (userType === "admin") {
-    addUserIdTextbox = document.getElementById('add-userId');
-    addUserIdTextbox.setAttribute('add-userId', 'true');
-    addUserIdTextbox.style.display = 'inline-block';
+    try {
+      const data = await getAllUsers();
+      const select = document.getElementById('add-userId');
+      select.innerHTML = '';
+
+      data.forEach(user => {
+        const option = document.createElement('option');
+        option.value = user.id;
+        option.textContent = user.userName;
+        select.appendChild(option);
+      });
+
+      select.setAttribute('add-userId', 'true');
+      select.style.display = 'inline-block';
+    } catch (err) {
+      console.error('שגיאה בקבלת רשימת משתמשים:', err);
+    }
   }
-  document.getElementById('addItemModal').style.display = 'block'
+
+  document.getElementById('addItemModal').style.display = 'block';
 };
 
 const closeAddItemModal = () => {
   document.getElementById('addItemModal').style.display = 'none';
 };
 // פונקציה להצגת חלון עריכה
-const openEditUserModal = (id) => {
+const openEditItemModal = async (id) => {
   const shoe = shoes.find(s => s.id === id);
   if (!shoe) {
     return;
@@ -281,8 +305,30 @@ const openEditUserModal = (id) => {
   document.getElementById('edit-color').value = shoe.color || '';
   document.getElementById('edit-id').value = shoe.id || '';
   document.getElementById('editItemModal').style.display = 'block';
-};
+  let { userType } = currentUserDetailsFromToken();
+  if (userType == null)
+    return;
+  if (userType === "admin") {
+    try {
 
+      const data = await getAllUsers();
+      const select = document.getElementById('edit-item-id');
+      select.innerHTML = '';
+      data.forEach(user => {
+        const option = document.createElement('option');
+        option.value = user.id;
+        option.textContent = user.userName;
+        select.appendChild(option);
+      });
+
+      select.value = shoe.userId || '';
+      select.setAttribute('add-userId', 'true');
+      select.style.display = 'inline-block';
+    } catch (err) {
+      console.error('שגיאה בקבלת רשימת משתמשים:', err);
+    }
+  }
+};
 // פונקציה לסגירת חלון עריכה
 const closeEditItemModal = () => {
   document.getElementById('editItemModal').style.display = 'none';
@@ -309,7 +355,7 @@ const closeEditUserModal = () => {
 // פונקציה לעדכון משתמש (admin בלבד)
 const updateUser = async () => {
   let { userId } = currentUserDetailsFromToken();
-  if(userId == null)
+  if (userId == null)
     return;
   const user = {
     id: userId,
@@ -344,3 +390,28 @@ const updateUser = async () => {
     console.error('Error updating user:', error);
   }
 };
+
+// פונקציה להצגת פרטי משתמש בפריט
+const displayUserDetailsToItem = async (userId) => {
+  const dataUsers = await getAllUsers();
+  const user = dataUsers.find(u => u.id === userId);
+
+  if (!user) {
+    console.log("User not found.");
+    return;
+  }
+
+  const userDetailsDiv = document.getElementById('user-details');
+  userDetailsDiv.innerHTML = `
+    <p><strong>Username:</strong> ${user.userName}</p>
+    <p><strong>Password:</strong> ${user.password}</p>
+    <p><strong>Email:</strong> ${user.email}</p>
+    <p><strong>Type:</strong> ${user.type}</p>
+  `;
+
+  document.getElementById('displayUserDetailsModal').style.display = 'block';
+};
+
+const closeDisplayUserDetailsModal = () => {
+  document.getElementById('displayUserDetailsModal').style.display = 'none';
+}

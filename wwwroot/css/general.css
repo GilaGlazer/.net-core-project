@@ -204,3 +204,10 @@ form input[type="submit"] {
     box-sizing: border-box;
     margin: 10px auto
 }
+
+select {
+    width: calc(95% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}

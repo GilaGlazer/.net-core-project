@@ -22,7 +22,6 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog(); // שימוש בסרילוג כמנוע הלוגים
 
-
 builder
     .Services.AddAuthentication(options =>
     {

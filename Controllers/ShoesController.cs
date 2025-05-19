@@ -20,14 +20,12 @@ public class ShoesController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Shoes>> Get()
     {
-        System.Console.WriteLine("Get shoes");
         return shoesService.Get();
     }
 
     [HttpGet("{id}")]
     public ActionResult<Shoes> Get(int id)
     {
-        System.Console.WriteLine("Get shoes with id");
         var shoe = shoesService.Get(id);
         if (shoe == null)
             return NotFound();
