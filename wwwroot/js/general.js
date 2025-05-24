@@ -1,14 +1,25 @@
 // פונקציה לניווט לעמוד לוגין
 const redirectToLogin = () => {
-    window.location.href = "/html/login.html"; // עדכן את הנתיב לפי דף הלוגין שלך
+    window.location.href = "/html/login.html"; 
 };
 
 // פונקציה להתנתקות המשתמש
 const logoutUser = () => {
-    localStorage.removeItem("authToken"); // ניקוי הטוקן
-    redirectToLogin(); // ניתוב לדף הלוגין
+    localStorage.removeItem("authToken"); 
+    redirectToLogin(); 
 };
-
+const getToken = () => {
+    const token = localStorage.getItem("authToken");
+    if (!token) return null;
+    try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        if (payload.exp > Math.floor(Date.now() / 1000)) return token;
+        localStorage.removeItem("authToken");
+    } catch {
+        localStorage.removeItem("authToken");
+    }
+    return null;
+};
 
 // פונקציה להבאת כל המשתמשים (admin בלבד)
 const getAllUsers = async () => {
@@ -60,3 +71,16 @@ const getAllItems = async () => {
       console.error('Unable to get items.', error);
     }
   };
+
+  const apiRequest = async(url, method, body = null) => {
+    const token = getToken();
+    if (!token) throw new Error('Authentication required.');
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+    };
+    const response = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : null });
+    if (!response.ok) throw new Error(`Unable to perform ${method} request: ${response.statusText}`);
+    return await response.json();
+};

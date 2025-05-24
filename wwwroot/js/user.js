@@ -1,14 +1,6 @@
 const userUri = '/users'; // URI למשתמשים
 let users = []; // מערך למשתמשים
 
-const getToken = () => {
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        return null;
-    }
-    return token;
-};
-
 const getUsers = async () => {
     const data = await getAllUsers();
     displayUsers(data);

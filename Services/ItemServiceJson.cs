@@ -139,9 +139,11 @@ public class ItemServiceJson<T> : IService<T>
                 return false;
 
             // אם המשתמש הוא מנהל, אל תאפשר לו לעדכן פריט של משתמש אחר
-            if (activeUserService.Type == "admin" && item.UserId != newItem.UserId)
-                return false;
-
+            // if (activeUserService.Type == "admin" && item.UserId != newItem.UserId)
+            // {
+            //     Console.WriteLine("Admin cannot update items of other users.");
+            //     return false;
+            // }
             if (activeUserService.Type != "admin")
                 newItem.UserId = activeUserService.UserId;
             else

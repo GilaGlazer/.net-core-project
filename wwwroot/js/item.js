@@ -3,29 +3,7 @@ let shoes = []; // מערך הנעליים
 const userUri = '/users';
 let currentUserDetails = {};
 
-const getToken = () => {
-  const token = localStorage.getItem("authToken");
-  if (!token) return null;
 
-  try {
-    const payloadBase64 = token.split('.')[1];
-    const payloadJson = atob(payloadBase64);
-    const payload = JSON.parse(payloadJson);
-
-    const currentTime = Math.floor(Date.now() / 1000); // שניות מאז 1970
-    if (payload.exp && payload.exp > currentTime) {
-      return token;
-    } else {
-      // התוקף פג – מחק מהאחסון
-      localStorage.removeItem("authToken");
-      return null;
-    }
-  } catch (e) {
-    // טוקן לא תקין – מחק אותו
-    localStorage.removeItem("authToken");
-    return null;
-  }
-};
 // פונקציה לבדוק אם יש טוקן ולנווט
 const checkTokenAndRedirect = () => {
   const token = getToken();
